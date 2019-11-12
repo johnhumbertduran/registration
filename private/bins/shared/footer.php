@@ -4,7 +4,7 @@
 
 
     <center>
-        <hr>
+        <hr class="footHr">
         &copy;2019
     </center>
     <br>

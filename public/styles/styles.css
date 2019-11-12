@@ -31,7 +31,7 @@
     box-shadow: 0 0 6px black;
     border-radius: 10px;
     padding: 1%;
-    width: 50%;
+    width: 60%;
 }
 
 .overflow-wrap{
@@ -44,14 +44,24 @@
 
 
 label{
-    float: left;
+    float: right;
+}
+
+@media only screen and (max-width: 1023px) {
+    label{
+        font-size: .8em;
+    }
+}
+
+.label{
+    width: 30%;
 }
 
 .lorem{
     width: 30%;
 }
 
-hr{
+.footHr{
     border: 1px solid rgb(29, 197, 57);
 }
 
@@ -71,3 +81,11 @@ hr{
     margin-bottom: 0%;
 }
 
+
+.txt_input{
+    width: 100%;
+}
+
+/* .radioWidth{
+    width: 10%;
+} */
