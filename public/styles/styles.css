@@ -8,13 +8,7 @@
     color: blueviolet;
 }
 
-.floating{
-    /* position: relative; */
-    /* right: 10px; */
-    /* background-color: yellow; */
-    /* float: right; */
-    height: 40px;
-}
+
 
 .nav-link{
     text-align: center;
@@ -39,9 +33,31 @@
     overflow: hidden;
 }
 
+.floating{
+    /* position: relative; */
+    /* right: 10px; */
+    /* background-color: yellow; */
+    /* float: right; */
+    /* height: 40px; */
+    /* width: 20%; */
+}
+
+#UserName{
+    /* background-color: rgb(13, 156, 44); */
+    /* float: right; */
+    /* width: 130%; */
+}
+
+.dropdown-item{
+    /* float: right; */
+}
+
 
 }
 
+.righting{
+    align-self: center;
+}
 
 label{
     float: right;
@@ -51,6 +67,10 @@ label{
     label{
         font-size: .8em;
     }
+
+    /* .floating{
+        text-align: center;
+    } */
 }
 
 .label{
@@ -89,3 +109,42 @@ label{
 /* .radioWidth{
     width: 10%;
 } */
+
+#UserName{
+    background-color: rgb(13, 156, 44);
+    /* float: right; */
+    /* width: 130%; */
+}
+
+#UserName:hover{
+    cursor: pointer;
+}
+
+#arrow:after{
+    content: " ";
+    position: absolute;
+    top: 50%; /* At the bottom of the tooltip */
+    right: 5%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color:  transparent transparent transparent black;
+}
+
+#UserName:hover #arrow::after{
+    border-color: black transparent transparent transparent;
+    top: 60%;
+    right: 5.1%;
+    /* background-color: aqua; */
+}
+
+.dropdown_menu{
+    display: none;
+}
+
+.nav-item:hover .dropdown_menu{
+    position: relative;
+    display: block;
+    /* float: right; */
+    z-index: 1;
+}

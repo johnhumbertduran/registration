@@ -7,6 +7,28 @@
     include(SHARED_PATH . '/slides.php');
     include(SHARED_PATH . '/login_nav.php');
 
+    // if(isset($_SESSION["userM"])){
+
+    //     $useNam = $_SESSION["userM"];
+    //     $qry_account_type = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$useNam'");
+    //     $get_account_type = mysqli_fetch_assoc($qry_account_type);
+    //     $account_type = $get_account_type["uAccountType"];
+        
+    //     if($account_type == 1){
+        
+    //         echo"<script>window.location.href='m_a';</script>";
+        
+    //     }elseif($account_type == 2){
+        
+    //         echo "<script>window.location.href='a';</script>";
+        
+    //     }elseif($account_type == 3){
+        
+    //         echo "<script>window.location.href='us';</script>";
+        
+    //     }
+    
+    // }
 
     class User{
 
@@ -120,25 +142,25 @@ if(isset($_POST["submit"])){
     }
 
     if(empty($_POST["elementary"])){
-        $user->elementary = "N/A";
+        // $user->elementary = "N/A";
     }else {
         $user->elementary = $_POST["elementary"];
     }
 
     if(empty($_POST["elementaryYearGraduated"])){
-        $user->elementaryYearGraduated = "N/A";
+        // $user->elementaryYearGraduated = "N/A";
     }else {
         $user->elementaryYearGraduated = $_POST["elementaryYearGraduated"];
     }
 
     if(empty($_POST["highSchool"])){
-        $user->highSchool = "N/A";
+        // $user->highSchool = "N/A";
     }else {
         $user->highSchool = $_POST["highSchool"];
     }
 
     if(empty($_POST["highSchoolYearGraduated"])){
-        $user->highSchoolYearGraduated = "N/A";
+        // $user->highSchoolYearGraduated = "N/A";
     }else {
         $user->highSchoolYearGraduated = $_POST["highSchoolYearGraduated"];
     }
@@ -192,7 +214,7 @@ if(isset($_POST["submit"])){
     }
 
     if(empty($_POST["alumniMembership"])){
-
+        $user->alumniChapterMembership = "N/A";
     }else {
         $user->alumniChapterMembership = $_POST["alumniMembership"];
     }
@@ -203,10 +225,10 @@ if(isset($_POST["submit"])){
         $user->email = $_POST["emailAddress"];
     }
 
-    if(empty($_POST["username"])){
+    if(empty($_POST["userM"])){
 
     }else {
-        $user->username = $_POST["username"];
+        $user->username = $_POST["userM"];
     }
 
     if(empty($_POST["regPassword"])){
@@ -280,6 +302,55 @@ if(isset($_POST["submit"])){
                         include(SHARED_PATH . '/warningColorConfirmPassword.php');
                     }else{
                         include(SHARED_PATH . '/removeWarningColorConfirmPassword.php');
+                        $query = "INSERT INTO usrs (lastName,firstName,middleName,
+                        homeAddress,gender,civilStatus,employmentAddress,currentWork,
+                        currentPosition,elementary,elementaryYearGraduated,highSchool,
+                        highSchoolYearGraduated,college,collegeYearGraduated,collegeDegree,
+                        graduate,graduateYearGraduated,graduateDegree,officeTelephoneNo,
+                        cellphoneNo,alumniChapterMembership,email,usrname,pssword,account_type)
+                        VALUES ('$user->lastName','$user->firstName','$user->middleName',
+                        '$user->homeAddress','$user->gender','$user->civilStatus',
+                        '$user->employmentAddress','$user->currentWork','$user->currentPosition',
+                        '$user->elementary','$user->elementaryYearGraduated','$user->highSchool',
+                        '$user->highSchoolYearGraduated','$user->college','$user->collegeYearGraduated',
+                        '$user->collegeDegree','$user->graduate','$user->graduateYearGraduated',
+                        '$user->graduateDegree','$user->officeTelephoneNo','$user->cellphoneNo',
+                        '$user->alumniChapterMembership','$user->email','$user->username',
+                        '$user->confirmPassword','2')";
+                        $stmt= $db->prepare($query);
+                        $stmt->execute([$user->lastName,$user->firstName,$user->middleName,
+                        $user->homeAddress,$user->gender,$user->civilStatus,
+                        $user->employmentAddress,$user->currentWork,$user->currentPosition,
+                        $user->elementary,$user->elementaryYearGraduated,$user->highSchool,
+                        $user->highSchoolYearGraduated,$user->college,$user->collegeYearGraduated,
+                        $user->collegeDegree,$user->graduate,$user->graduateYearGraduated,
+                        $user->graduateDegree,$user->officeTelephoneNo,$user->cellphoneNo,
+                        $user->alumniChapterMembership,$user->email,$user->username,
+                        $user->confirmPassword,'2']);
+
+                        $a = md5(rand(1,9));
+                        $b = md5(rand(1,9));
+                        $c = md5(rand(1,9));
+                        $ab = md5(rand(a,b));
+                        $t = rand(1,6);
+
+                        header('Location: ?=Success!'.$a.'&&ready_'.$t.'='.$ab.'&&redir_'.$t.'='.$b.$c);
+
+                        // mysqli_query($connections, "INSERT INTO usrs (lastName,firstName,middleName,
+                        // homeAddress,gender,civilStatus,employmentAddress,currentWork,
+                        // currentPosition,elementary,elementaryYearGraduated,highSchool,
+                        // highSchoolYearGraduated,college,collegeYearGraduated,collegeDegree,
+                        // graduate,graduateYearGraduated,graduateDegree,officeTelephoneNo,
+                        // cellphoneNo,alumniChapterMembership,email,usrname,pssword,account_type)
+                        // VALUES ('$user->lastName','$user->firstName','$user->middleName',
+                        // '$user->homeAddress','$user->gender','$user->civilStatus',
+                        // '$user->employmentAddress','$user->currentWork','$user->currentPosition',
+                        // '$user->elementary','$user->elementaryYearGraduated','$user->highSchool',
+                        // '$user->highSchoolYearGraduated','$user->college','$user->collegeYearGraduated',
+                        // '$user->collegeDegree','$user->graduate','$user->graduateYearGraduated',
+                        // '$user->graduateDegree','$user->officeTelephoneNo','$user->cellphoneNo',
+                        // '$user->alumniChapterMembership','$user->email','$user->username',
+                        // '$user->confirmPassword','2')");
                     }
                 }
             }
@@ -366,14 +437,14 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="elementary">Elementary:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementary; ?>" name="elementary" id="elementary" autocomplete="false" placeholder="Elementary"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementary; ?>" name="elementary" id="elementary" autocomplete="false" placeholder="Elementary" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="elementaryYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementaryYearGraduated; ?>" name="elementaryYearGraduated" autocomplete="false" id="elementaryYearGraduated" placeholder="Year Graduated"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementaryYearGraduated; ?>" name="elementaryYearGraduated" autocomplete="false" id="elementaryYearGraduated" placeholder="Year Graduated" required></td>
     </tr>
     </div>
 
@@ -382,14 +453,14 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="highSchool">High School:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchool; ?>" name="highSchool" id="highSchool" autocomplete="false" placeholder="High School"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchool; ?>" name="highSchool" id="highSchool" autocomplete="false" placeholder="High School" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="highSchoolYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchoolYearGraduated; ?>" name="highSchoolYearGraduated" id="highSchoolYearGraduated" autocomplete="false" placeholder="Year Graduated"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchoolYearGraduated; ?>" name="highSchoolYearGraduated" id="highSchoolYearGraduated" autocomplete="false" placeholder="Year Graduated" required></td>
     </tr>
     </div>
 
@@ -473,8 +544,8 @@ if(isset($_POST["submit"])){
 
     <div class="form-group">
     <tr>
-    <td class="label"><b><label for="username">User Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->username; ?>" name="username" id="username" autocomplete="false" placeholder="User Name" required></td>
+    <td class="label"><b><label for="userSign">User Name:</label></b></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->username; ?>" name="userM" id="userSign" autocomplete="false" placeholder="User Name" required></td>
     </tr>
     </div>
 

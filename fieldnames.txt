@@ -2,7 +2,7 @@ lastName
 firstName
 middleName
 homeAddress
-sex
+gender
 civilStatus
 employmentAddress
 currentWork
@@ -21,7 +21,10 @@ officeTelephoneNo
 cellphoneNo
 alumniChapterMembership
 email
-username
-password
+usrname
+pssword
+tempPassword
+id
+account_type
 
-25+2 (id & account type) = 27
+28

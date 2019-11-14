@@ -23,7 +23,7 @@
       <div class="container floating d-flex justify-content-end">
           <form class="form-inline" action="">
               <div class="input-group mb-3 float-right">
-                <input type="text" name="user" placeholder="Username" class="form-control mr-sm-2" id="user" autocomplete="off">
+                <input type="text" name="userM" placeholder="Username" class="form-control mr-sm-2" id="user" autocomplete="off">
                 <input type="password" name="password" placeholder="Password" class="form-control mr-sm-2" id="password">
                 <div class="input-group-append">
                 <button class="btn btn-primary" type="submit">Log In</button>
@@ -31,6 +31,6 @@
               </div>
           </form>
       </div>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </nav>
