@@ -8,8 +8,6 @@
     color: blueviolet;
 }
 
-
-
 .nav-link{
     text-align: center;
 }
@@ -20,14 +18,9 @@
     /* background-color: yellow; */
 }
 
-
-
-
-
 label{
     float: right;
 }
-
 
 
 .label{
@@ -58,64 +51,12 @@ label{
     margin-bottom: 0%;
 }
 
+/* ######### End sa slide ############ */
 
 .txt_input{
     width: 100%;
 }
 
-/* .radioWidth{
-    width: 10%;
-} */
-
-#UserName{
-    background-color: rgb(13, 156, 44);
-    /* float: right; */
-    /* width: fit-content; */
-}
-
-#UserName:hover{
-    cursor: pointer;
-}
-
-#arrow:after{
-    content: " ";
-    position: absolute;
-    top: 50%; /* At the bottom of the tooltip */
-    right: 5%;
-    margin-left: -5px;
-    border-width: 7px;
-    border-style: solid;
-    border-color:  transparent transparent transparent black;
-}
-
-#UserName:hover #arrow::after{
-    border-color: black transparent transparent transparent;
-    top: 60%;
-    right: 5.1%;
-    /* background-color: aqua; */
-}
-
-.dropdown_menu{
-    display: none;
-    /* clear: both; */
-    /* width: fit-content; */
-}
-
-.dropdown_menu .dropdown-item{
-    /* clear: both; */
-    width: 14%;
-    /* float: right; */
-}
-
-.nav-item:hover .dropdown_menu{
-    position: absolute;
-    display: block;
-    /* background-color: lawngreen; */
-    /* float: right; */
-    width: 100%;
-    padding: 0%;
-    z-index: 1;
-}
 
 
 
@@ -134,38 +75,12 @@ label{
     }
     
     .floating{
-        /* position: relative; */
-        /* right: 10px; */
-        /* background-color: yellow; */
-        /* float: right; */
         height: 40px;
-        /* width: 20%; */
     }
     
-    #UserName{
-        /* background-color: rgb(13, 156, 44); */
-        /* float: right; */
-        /* width: 130%; */
-    }
+  
     
-    .acco{
-        /* background-color: lightcoral; */
-        clear: both;
-        width: 100%;
-        /* float: right; */
-    }
 
-    .flr{
-        /* position: relative; */
-        /* clear: both; */
-        /* right: 0%; */
-        width: 15%;
-        float: right;
-    }
-
-    .dropdown-item:hover{
-        background-color: lightcoral;
-    }
     
     }
 
@@ -181,3 +96,12 @@ label{
 
 }
 
+
+.dropdown-menu{
+    position: absolute;
+    z-index: 1;
+}
+
+.collapse{
+    float: right;
+}

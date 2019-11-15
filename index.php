@@ -9,6 +9,7 @@
     include(SHARED_PATH . '/slides.php');
     include(SHARED_PATH . '/login_nav.php');
 
+
 ?>
 
 <script>

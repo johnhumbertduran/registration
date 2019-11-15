@@ -331,7 +331,7 @@ if(isset($_POST["submit"])){
                         $a = md5(rand(1,9));
                         $b = md5(rand(1,9));
                         $c = md5(rand(1,9));
-                        $ab = md5(rand(a,b));
+                        // $ab = md5(rand(a,b));
                         $t = rand(1,6);
 
                         header('Location: ?=Success!'.$a.'&&ready_'.$t.'='.$ab.'&&redir_'.$t.'='.$b.$c);

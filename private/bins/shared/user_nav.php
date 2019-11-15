@@ -1,6 +1,31 @@
 <?php
 
-$getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='johnhumbert' ");
+if(isset($_SESSION["useM"])){
+
+  $sesUse = $_SESSION["useM"];
+
+  $match_account_type = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
+  $get_account_type = mysqli_fetch_assoc($match_account_type);
+  $account_type = $get_account_type["account_type"];
+  
+  if($account_type != 2){
+  
+      // echo"<script>window.location.href='m_a';</script>";
+      // header('Location: ../private/forbidden');
+  
+  }
+
+}else{
+  
+  // echo "<script>window.location.href='a';</script>";
+  // header('Location: ../private/user');
+  header('Location: ../');
+  // echo "<script>window.location.href='private/user?=Success!'.$r.'&&ready_'.$qw.'='.$lp.'&&redir_'.$qw.'='.$hg.$o';</script>";
+
+}
+
+
+$getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse' ");
     $fetchName = mysqli_fetch_assoc($getName);
     $name = $fetchName["firstName"];
 
@@ -16,28 +41,24 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='johnhum
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   
-  <ul class="navbar-nav">
+  <ul class="navbar-nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link" href="../registration">Home</a>
+      <a class="nav-link" href="#">Home</a>
     </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" href="about">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="contact">Contact</a>
-    </li> -->
-<!-- <br> -->
-    <div class="righting acco">
 
-    <li class="nav-item flr">
-      <a class="nav-link" id="UserName">hey<span id="arrow"></span></a>
-      <div class="dropdown_menu">
-        <a class="dropdown-item d-flex justify-content-center" href="#">Account Settings</a>
-        <a class="dropdown-item d-flex justify-content-center" href="#">Link 2</a>
-        <a class="dropdown-item d-flex justify-content-center" href="#">Link 3</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        <?php echo $name; ?>
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Account Settings</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="logOut">Log Out</a>
       </div>
     </li>
-    </div>
+    <li class="nav-item" style="visibility:hidden;">
+      <a class="nav-link" href="#">nav</a>
+    </li>
   </ul>
 </div>
 </nav>
