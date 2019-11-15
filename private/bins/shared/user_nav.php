@@ -27,14 +27,14 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='johnhum
       <a class="nav-link" href="contact">Contact</a>
     </li> -->
 <!-- <br> -->
-    <div class="container floating righting">
+    <div class="righting acco">
 
-    <li class="nav-item">
-      <a class="nav-link" id="UserName"><?php echo $name; ?><span id="arrow"></span></a>
-      <div class="dropdown_menu" style="float:right">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+    <li class="nav-item flr">
+      <a class="nav-link" id="UserName">hey<span id="arrow"></span></a>
+      <div class="dropdown_menu">
+        <a class="dropdown-item d-flex justify-content-center" href="#">Account Settings</a>
+        <a class="dropdown-item d-flex justify-content-center" href="#">Link 2</a>
+        <a class="dropdown-item d-flex justify-content-center" href="#">Link 3</a>
       </div>
     </li>
     </div>

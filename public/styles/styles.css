@@ -20,58 +20,15 @@
     /* background-color: yellow; */
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 2560px) {
-.register_form_container{
-    box-shadow: 0 0 6px black;
-    border-radius: 10px;
-    padding: 1%;
-    width: 60%;
-}
-
-.overflow-wrap{
-    height: 300px;
-    overflow: hidden;
-}
-
-.floating{
-    /* position: relative; */
-    /* right: 10px; */
-    /* background-color: yellow; */
-    /* float: right; */
-    /* height: 40px; */
-    /* width: 20%; */
-}
-
-#UserName{
-    /* background-color: rgb(13, 156, 44); */
-    /* float: right; */
-    /* width: 130%; */
-}
-
-.dropdown-item{
-    /* float: right; */
-}
 
 
-}
 
-.righting{
-    align-self: center;
-}
 
 label{
     float: right;
 }
 
-@media only screen and (max-width: 1023px) {
-    label{
-        font-size: .8em;
-    }
 
-    /* .floating{
-        text-align: center;
-    } */
-}
 
 .label{
     width: 30%;
@@ -113,7 +70,7 @@ label{
 #UserName{
     background-color: rgb(13, 156, 44);
     /* float: right; */
-    /* width: 130%; */
+    /* width: fit-content; */
 }
 
 #UserName:hover{
@@ -140,11 +97,87 @@ label{
 
 .dropdown_menu{
     display: none;
+    /* clear: both; */
+    /* width: fit-content; */
+}
+
+.dropdown_menu .dropdown-item{
+    /* clear: both; */
+    width: 14%;
+    /* float: right; */
 }
 
 .nav-item:hover .dropdown_menu{
-    position: relative;
+    position: absolute;
     display: block;
+    /* background-color: lawngreen; */
     /* float: right; */
+    width: 100%;
+    padding: 0%;
     z-index: 1;
 }
+
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .register_form_container{
+        box-shadow: 0 0 6px black;
+        border-radius: 10px;
+        padding: 1%;
+        width: 60%;
+    }
+    
+    .overflow-wrap{
+        height: 300px;
+        overflow: hidden;
+    }
+    
+    .floating{
+        /* position: relative; */
+        /* right: 10px; */
+        /* background-color: yellow; */
+        /* float: right; */
+        height: 40px;
+        /* width: 20%; */
+    }
+    
+    #UserName{
+        /* background-color: rgb(13, 156, 44); */
+        /* float: right; */
+        /* width: 130%; */
+    }
+    
+    .acco{
+        /* background-color: lightcoral; */
+        clear: both;
+        width: 100%;
+        /* float: right; */
+    }
+
+    .flr{
+        /* position: relative; */
+        /* clear: both; */
+        /* right: 0%; */
+        width: 15%;
+        float: right;
+    }
+
+    .dropdown-item:hover{
+        background-color: lightcoral;
+    }
+    
+    }
+
+@media only screen and (max-width: 1023px) {
+    label{
+        font-size: .8em;
+    }
+
+    /* .floating{
+        text-align: center;
+    } */
+
+
+}
+
