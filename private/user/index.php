@@ -21,18 +21,38 @@ $img = $my_info["img"];
 
 <script>
     var _URL = window.URL || window.webkitURL;
+    var prev = document.getElementById("preview");
+    var img = new Image();
 
     function displayPreview(files){
 
         var file = files[0];
-        var img = new Image();
         var sizeKB = file.size / 1024;
+        var uploadBtn = document.getElementById("uploadPhotoBtn");
+
+        if(prev == ""){
+
+        }else{
+
+        uploadBtn.style.display = "block";
         img.onload = function(){
             $('#preview').append(img);
         }
 
         img.src = _URL.createObjectURL(file);
+        }
     }
+
+    var closeUpload = document.getElementById("dp_close");
+    
+
+    function closeUploadPhoto(){
+        // prev.innerHTML = "";
+        document.getElementById("profile_picID").value = "";
+        img.src = "";
+        // alert("hay");
+    }
+
 </script>
 
 <br>
@@ -56,16 +76,17 @@ if(isset($_POST["btnUpload"])){
 
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-    if($_FILES["profile_pic"]["size"]>1000000000000){
+    if($_FILES["profile_pic"]["size"]>1000000000000000000000000){
 
         $uploadErr = "Sorry, your file is too large!";
+        // echo "<script>alert('Too large');</script>";
         $uploadOk = 0;
     }
 
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"){
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF"){
 
         $uploadErr = "Sorry, only JPG, JPEG, PNG & GIF files are allowed!";
-
+        // echo "<script>alert('File type');</script>";
         $uploadOk = 0;
     }
 
@@ -89,6 +110,7 @@ if(isset($_POST["btnUpload"])){
 
         }else{
             echo "Sorry, there was an error uploading your file.";
+            echo 'Error:  '.$_FILES['profile_pic']['error'];
         }
     }
 
@@ -100,50 +122,84 @@ if(empty($_GET["notify"])){
  echo "<center>" . $_GET["notify"] . "</center>";
 }
 
-if($img == ""){
-    echo "<center> No photo </center>";
-}else{
-    echo "<center> <img src='$img' height='250px' width='150px' alt='' srcset=''> </center>";
-}
+
 
 
 ?>
 
 
-<center>
 
-    <form method="post" enctype="multipart/form-data">
 
-    <table border="0" width="30%">
+    <div class="container left_content">
+        <div>
+        <?php
+        
+        if($img == ""){
+            echo "<center> No photo </center>";
+        }else{
+            echo "<center>
+                    <div class='dp_cover'>
+                        <img src='$img' class='dp' alt='profile_pic' srcset=''>
+                        <div class='upload'><a href='#' data-toggle='modal' data-target='#upload_photo'>Upload</a><br><br></div>
+                    </div>
+                </center>";
+        }
 
-        <tr>
-            <td colspan="2"><center><span id="preview"></span></center></td>
-        </tr>
+        ?>
+        </div>
 
-        <tr>
-            <td colspan="2"><hr></td>
-        </tr>
+        
 
-        <tr>
-            <td width="50%"><input type="file" id="profile_pic" name="profile_pic" onchange="displayPreview(this.files);"></td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td colspan="2">
-                <center>
-                    <input type="submit" name="btnUpload" class="btn-update" value="Upload">
-                </center>
-            </td>
-        </tr>
-
-    </table>
-
-    </form>
+    </div>
     
-    <span class="error"><?php echo $uploadErr; ?></span>
 
-</center>
+    <!-- The Modal -->
+    <div class="modal fade" id="upload_photo">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4>Upload Profile Picture</h4>
+              <button type="button" class="close" id="dp_close" onclick="closeUploadPhoto()" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+            <center>
+
+                <form method="post" enctype="multipart/form-data">
+
+
+                            <center><br><span id="preview"></span></center>
+
+                            <hr>
+
+                            <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                            <input type="file" class="btn btn-info" id="profile_picID" name="profile_pic" onchange="displayPreview(this.files);">
+                            <!-- <label class="custom-file-label" for="profile_pic">Choose your photo</label> -->
+                            <br>
+
+                            
+
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                        <center>
+                            <input type="submit" name="btnUpload" class="btn btn-success" id="uploadPhotoBtn" value="Upload">
+                        </center>
+                    </form>
+                <span class="error"><?php echo $uploadErr; ?></span>
+                </center>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+
+
 
 <center>
 <div class="lorem">
@@ -165,6 +221,12 @@ if($img == ""){
 
 </div>
 </center>
+
+<script>
+
+
+
+</script>
 
 <?php
 

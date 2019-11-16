@@ -78,7 +78,10 @@ label{
         height: 40px;
     }
     
-  
+    .left_content{
+        float: left;
+        width: 30%;
+    }
     
 
     
@@ -104,4 +107,46 @@ label{
 
 .collapse{
     float: right;
+}
+
+
+
+.dp_cover{
+    border-radius: 50%;
+    /* background-color: blueviolet; */
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border: 5px solid rgb(42, 196, 67);
+    
+    /* object-fit: contain; */
+}
+
+.dp{
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+.upload{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.671);
+    text-align: center;
+    position: relative;
+    padding: 1% 3.3%;
+    bottom: 30%;
+    text-overflow: hidden;
+}
+
+.dp_cover:hover .upload{
+    display: block;
+}
+
+.dp_cover:hover .dp{
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+#uploadPhotoBtn{
+    display: none;
 }

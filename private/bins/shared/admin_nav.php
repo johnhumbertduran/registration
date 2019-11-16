@@ -8,7 +8,7 @@ if(isset($_SESSION["useM"])){
   $get_account_type = mysqli_fetch_assoc($match_account_type);
   $account_type = $get_account_type["account_type"];
   
-  if($account_type != 2){
+  if($account_type != 1){
   
       // echo"<script>window.location.href='m_a';</script>";
       header('Location: ../../forbidden');

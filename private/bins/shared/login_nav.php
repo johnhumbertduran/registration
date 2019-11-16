@@ -139,7 +139,7 @@ if(isset($_POST["logsIn"])){
 ?>
 
 <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
-  <!-- <a class="navbar-brand" href="#">Logo</a> -->
+  <!-- <a class="navbar-brand" href="../registration"><img src="<?php echo url_for('public/images/logo.png'); ?>" alt="ACC Logo" srcset="" width="30" height="30"></a> -->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -164,7 +164,7 @@ if(isset($_POST["logsIn"])){
           <form method="POST" class="form-inline">
               <div class="input-group mb-3 float-right">
                 <input type="text" name="userM" value="<?php echo $sesUse; ?>" placeholder="Username" class="form-control mr-sm-2" id="user" autocomplete="off">
-                <input type="password" name="passW" value="<?php echo $logUse; ?>" placeholder="Password" class="form-control mr-sm-2" id="password">
+                <input type="password" name="passW" value="<?php echo $logUse; ?>" placeholder="Password" class="form-control mr-sm-2" id="password" autocomplete="off">
                 <div class="input-group-append">
                 <button class="btn btn-primary" name="logsIn" type="submit">Log In</button>
                 </div>

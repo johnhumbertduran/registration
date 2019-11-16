@@ -369,21 +369,21 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="lastname">Last Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->lastName; ?>" name="lastname" class="warningColor" id="lastname" placeholder="Last Name" autocomplete="false" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->lastName; ?>" name="lastname" class="warningColor" id="lastname" placeholder="Last Name" autocomplete="off" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="firstname">First Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->firstName; ?>" name="firstname" class="err" id="firstname" placeholder="First Name" autocomplete="false" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->firstName; ?>" name="firstname" class="err" id="firstname" placeholder="First Name" autocomplete="off" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="middlename">Middle Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->middleName; ?>" name="middlename" class="err" id="middlename" placeholder="Middle Name" autocomplete="false" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->middleName; ?>" name="middlename" class="err" id="middlename" placeholder="Middle Name" autocomplete="off" required></td>
     </tr>
     </div>
 
@@ -393,7 +393,7 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="homeAddress">Home Address:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->homeAddress; ?>" name="homeAddress" id="homeAddress" placeholder="Home Address" autocomplete="false" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->homeAddress; ?>" name="homeAddress" id="homeAddress" placeholder="Home Address" autocomplete="off" required></td>
     </tr>
     </div>
 
@@ -414,21 +414,21 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="employmentAddress">Employment Address:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->employmentAddress; ?>" name="employmentAddress" id="employmentAddress" autocomplete="false" placeholder="Employment Address"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->employmentAddress; ?>" name="employmentAddress" id="employmentAddress" autocomplete="off" placeholder="Employment Address"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="currentWork">Current Work:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->currentWork; ?>" name="currentWork" id="currentWork" autocomplete="false" placeholder="Current Work"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->currentWork; ?>" name="currentWork" id="currentWork" autocomplete="off" placeholder="Current Work"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="currentPosition">Current Position:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->currentPosition; ?>" name="currentPosition" id="currentPosition" autocomplete="false" placeholder="Current Position"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->currentPosition; ?>" name="currentPosition" id="currentPosition" autocomplete="off" placeholder="Current Position"></td>
     </tr>
     </div>
 
@@ -437,14 +437,14 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="elementary">Elementary:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementary; ?>" name="elementary" id="elementary" autocomplete="false" placeholder="Elementary" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementary; ?>" name="elementary" id="elementary" autocomplete="off" placeholder="Elementary" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="elementaryYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementaryYearGraduated; ?>" name="elementaryYearGraduated" autocomplete="false" id="elementaryYearGraduated" placeholder="Year Graduated" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->elementaryYearGraduated; ?>" name="elementaryYearGraduated" autocomplete="off" id="elementaryYearGraduated" placeholder="Year Graduated" required></td>
     </tr>
     </div>
 
@@ -453,14 +453,14 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="highSchool">High School:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchool; ?>" name="highSchool" id="highSchool" autocomplete="false" placeholder="High School" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchool; ?>" name="highSchool" id="highSchool" autocomplete="off" placeholder="High School" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="highSchoolYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchoolYearGraduated; ?>" name="highSchoolYearGraduated" id="highSchoolYearGraduated" autocomplete="false" placeholder="Year Graduated" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->highSchoolYearGraduated; ?>" name="highSchoolYearGraduated" id="highSchoolYearGraduated" autocomplete="off" placeholder="Year Graduated" required></td>
     </tr>
     </div>
 
@@ -469,21 +469,21 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="college">College:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->college; ?>" name="college" id="college" autocomplete="false" placeholder="College"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->college; ?>" name="college" id="college" autocomplete="off" placeholder="College"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="collegeYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->collegeYearGraduated; ?>" name="collegeYearGraduated" id="collegeYearGraduated" autocomplete="false" placeholder="Year Graduated"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->collegeYearGraduated; ?>" name="collegeYearGraduated" id="collegeYearGraduated" autocomplete="off" placeholder="Year Graduated"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="collegeDegree">Degree:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->collegeDegree; ?>" name="collegeDegree" id="collegeDegree" autocomplete="false" placeholder="Degree"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->collegeDegree; ?>" name="collegeDegree" id="collegeDegree" autocomplete="off" placeholder="Degree"></td>
     </tr>
     </div>
     
@@ -492,21 +492,21 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="graduate">Graduate:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduate; ?>" name="graduate" id="graduate" autocomplete="false" placeholder="Graduate"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduate; ?>" name="graduate" id="graduate" autocomplete="off" placeholder="Graduate"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="graduateYearGraduated">Year Graduated:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduateYearGraduated; ?>" name="graduateYearGraduated" id="graduateYearGraduated" autocomplete="false" placeholder="Year Graduated"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduateYearGraduated; ?>" name="graduateYearGraduated" id="graduateYearGraduated" autocomplete="off" placeholder="Year Graduated"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="graduateDegree">Degree:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduateDegree; ?>" name="graduateDegree" id="graduateDegree" autocomplete="false" placeholder="Degree"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->graduateDegree; ?>" name="graduateDegree" id="graduateDegree" autocomplete="off" placeholder="Degree"></td>
     </tr>
     </div>
     
@@ -515,21 +515,21 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="telNo">Office Telephone No. :</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text"maxlength="14" onkeypress='return isNumberKey(event)' value="<?php echo $user->officeTelephoneNo; ?>" name="telNo" id="telNo" autocomplete="false" placeholder="Office Telephone No."></td>
+    <td colspan="3"><input class="form-control txt_input" type="text"maxlength="14" onkeypress='return isNumberKey(event)' value="<?php echo $user->officeTelephoneNo; ?>" name="telNo" id="telNo" autocomplete="off" placeholder="Office Telephone No."></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="celNo">Mobile/Cell Phone No. :</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" maxlength="13" onkeypress='return isNumberKey(event)' value="<?php echo $user->cellphoneNo; ?>" name="celNo" id="celNo" autocomplete="false" placeholder="Mobile/Cell Phone No." required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" maxlength="13" onkeypress='return isNumberKey(event)' value="<?php echo $user->cellphoneNo; ?>" name="celNo" id="celNo" autocomplete="off" placeholder="Mobile/Cell Phone No." required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="alumniMembership">Alumni Chapter Membership:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->alumniChapterMembership; ?>" name="alumniMembership" id="alumniMembership" autocomplete="false" placeholder="Alumni Chapter Membership"></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->alumniChapterMembership; ?>" name="alumniMembership" id="alumniMembership" autocomplete="off" placeholder="Alumni Chapter Membership"></td>
     </tr>
     </div>
 
@@ -538,28 +538,28 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="emailAddress">Email Address:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="email" value="<?php echo $user->email; ?>" name="emailAddress" id="emailAddress" autocomplete="false" placeholder="Email Address" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="email" value="<?php echo $user->email; ?>" name="emailAddress" id="emailAddress" autocomplete="off" placeholder="Email Address" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="userSign">User Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->username; ?>" name="userM" id="userSign" autocomplete="false" placeholder="User Name" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->username; ?>" name="userM" id="userSign" autocomplete="off" placeholder="User Name" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="regPassword">Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->regPassword; ?>" name="regPassword" id="regPassword" autocomplete="false" placeholder="Password" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->regPassword; ?>" name="regPassword" id="regPassword" autocomplete="off" placeholder="Password" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="confirmPassword">Confirm Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="false" placeholder="Confirm Password" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="off" placeholder="Confirm Password" required></td>
     </tr>
     </div>
 
