@@ -28,6 +28,7 @@ if(isset($_SESSION["useM"])){
 $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse' ");
     $fetchName = mysqli_fetch_assoc($getName);
     $name = $fetchName["firstName"];
+    $userN = $fetchName["usrname"];
 
 
 ?>
@@ -42,13 +43,21 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   
   <ul class="navbar-nav justify-content-end">
-    <li class="nav-item">
+    <li class="nav-item userHover">
       <a class="nav-link" href="#">Home</a>
     </li>
 
-    <li class="nav-item dropdown">
+    <li class="nav-item userHover">
+      <a class="nav-link" href="#">Comunity</a>
+    </li>
+
+    <li class="nav-item userHover">
+      <a class="nav-link" href="#">Members</a>
+    </li>
+
+    <li class="nav-item dropdown userHover">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        <?php echo $name; ?>
+        <?php echo $userN; ?>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Account Settings</a>

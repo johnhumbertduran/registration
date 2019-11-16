@@ -42,11 +42,11 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   
   <ul class="navbar-nav justify-content-end">
-    <li class="nav-item">
+    <li class="nav-item userHover">
       <a class="nav-link" href="#">Home</a>
     </li>
 
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown userHover">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         <?php echo $name; ?>
       </a>

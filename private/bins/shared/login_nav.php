@@ -93,7 +93,7 @@ if(isset($_POST["logsIn"])){
                     $_SESSION["useM"] = $sesUse;
 
                     // echo"<script>window.location.href='m_a';</script>";
-                    header('Location: private/admin?=Success!'.$r.'&&ready_'.$qw.'='.$lp.'&&redir_'.$qw.'='.$hg.$o);
+                    header('Location: private/admin');
 
                 
                 }else{
@@ -113,7 +113,7 @@ if(isset($_POST["logsIn"])){
                 $_SESSION["useM"] = $sesUse;
                 
                 // echo"<script>window.location.href='a';</script>";
-                header('Location: private/user?=Success!'.$r.'&&ready_'.$qw.'='.$lp.'&&redir_'.$qw.'='.$hg.$o);
+                header('Location: private/user');
 
                 }else{
                 

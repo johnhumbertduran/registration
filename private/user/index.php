@@ -12,6 +12,15 @@ $query_info = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$ses
 $my_info = mysqli_fetch_assoc($query_info);
 $account_type = $my_info["account_type"];
 $img = $my_info["img"];
+$firstName = ucfirst($my_info["firstName"]);
+$middleName = ucfirst($my_info["middleName"]);
+$lastName = ucfirst($my_info["lastName"]);
+$address = ucfirst($my_info["homeAddress"]);
+$work = ucfirst($my_info["currentWork"]);
+$workPosition = ucfirst($my_info["currentPosition"]);
+$email = $my_info["email"];
+
+$fullName = $firstName . " " . $middleName[0]. ". " . $lastName;
 
 ?>
 
@@ -147,8 +156,21 @@ if(empty($_GET["notify"])){
 
         ?>
         </div>
-
-        
+            <br>
+        <div class="container basic_info">
+            <br>
+            <h5><center>Basic Info</center></h5>
+            <hr>
+            <h6><center><?php echo $fullName; ?></center></h6>
+            <h6><center><?php echo $address; ?></center></h6>
+            <?php if($work != "N/A" && "none"){?>
+            <h6><center><?php echo $workPosition . " at " . $work ; ?></center></h6>
+            <?php }else{
+                
+            } ?>
+            <h6><center><?php echo $email; ?></center></h6>
+            <br>
+        </div>
 
     </div>
     

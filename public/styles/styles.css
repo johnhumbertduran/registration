@@ -150,3 +150,13 @@ label{
 #uploadPhotoBtn{
     display: none;
 }
+
+.basic_info{
+    border: 1px solid rgba(151, 151, 151, 0.842);
+    width: 80%;
+    color: rgb(100, 100, 100);
+}
+
+.userHover:hover{
+    text-decoration: underline;
+}
