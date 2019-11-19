@@ -1,34 +1,10 @@
 <?php
 
-    require_once('private/bins/initialize.php');
+include("private/bins/shared/header.php");
+include("private/bins/shared/connections.php");
+include("private/bins/shared/slides.php");
+include("private/bins/shared/login_nav.php");
 
-    include(SHARED_PATH . '/header.php');
-    include(SHARED_PATH . '/connections.php');
-    include(SHARED_PATH . '/slides.php');
-    include(SHARED_PATH . '/login_nav.php');
-
-    // if(isset($_SESSION["userM"])){
-
-    //     $useNam = $_SESSION["userM"];
-    //     $qry_account_type = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$useNam'");
-    //     $get_account_type = mysqli_fetch_assoc($qry_account_type);
-    //     $account_type = $get_account_type["uAccountType"];
-        
-    //     if($account_type == 1){
-        
-    //         echo"<script>window.location.href='m_a';</script>";
-        
-    //     }elseif($account_type == 2){
-        
-    //         echo "<script>window.location.href='a';</script>";
-        
-    //     }elseif($account_type == 3){
-        
-    //         echo "<script>window.location.href='us';</script>";
-        
-    //     }
-    
-    // }
 
     class User{
 
@@ -124,79 +100,79 @@ if(isset($_POST["submit"])){
     }
 
     if(empty($_POST["employmentAddress"])){
-        $user->employmentAddress = "N/A";
+        $user->employmentAddress = "none";
     }else {
         $user->employmentAddress = $_POST["employmentAddress"];
     }
 
     if(empty($_POST["currentWork"])){
-        $user->currentWork = "N/A";
+        $user->currentWork = "none";
     }else {
         $user->currentWork = $_POST["currentWork"];
     }
 
     if(empty($_POST["currentPosition"])){
-        $user->currentPosition = "N/A";
+        $user->currentPosition = "none";
     }else {
         $user->currentPosition = $_POST["currentPosition"];
     }
 
     if(empty($_POST["elementary"])){
-        // $user->elementary = "N/A";
+        // $user->elementary = "none";
     }else {
         $user->elementary = $_POST["elementary"];
     }
 
     if(empty($_POST["elementaryYearGraduated"])){
-        // $user->elementaryYearGraduated = "N/A";
+        // $user->elementaryYearGraduated = "none";
     }else {
         $user->elementaryYearGraduated = $_POST["elementaryYearGraduated"];
     }
 
     if(empty($_POST["highSchool"])){
-        // $user->highSchool = "N/A";
+        // $user->highSchool = "none";
     }else {
         $user->highSchool = $_POST["highSchool"];
     }
 
     if(empty($_POST["highSchoolYearGraduated"])){
-        // $user->highSchoolYearGraduated = "N/A";
+        // $user->highSchoolYearGraduated = "none";
     }else {
         $user->highSchoolYearGraduated = $_POST["highSchoolYearGraduated"];
     }
 
     if(empty($_POST["college"])){
-        $user->college = "N/A";
+        $user->college = "none";
     }else {
         $user->college = $_POST["college"];
     }
 
     if(empty($_POST["collegeYearGraduated"])){
-        $user->collegeYearGraduated = "N/A";
+        $user->collegeYearGraduated = "none";
     }else {
         $user->collegeYearGraduated = $_POST["collegeYearGraduated"];
     }
 
     if(empty($_POST["collegeDegree"])){
-        $user->collegeDegree = "N/A";
+        $user->collegeDegree = "none";
     }else {
         $user->collegeDegree = $_POST["collegeDegree"];
     }
 
     if(empty($_POST["graduate"])){
-        $user->graduate = "N/A";
+        $user->graduate = "none";
     }else {
         $user->graduate = $_POST["graduate"];
     }
 
     if(empty($_POST["graduateYearGraduated"])){
-        $user->graduateYearGraduated = "N/A";
+        $user->graduateYearGraduated = "none";
     }else {
         $user->graduateYearGraduated = $_POST["graduateYearGraduated"];
     }
 
     if(empty($_POST["graduateDegree"])){
-        $user->graduateDegree = "N/A";
+        $user->graduateDegree = "none";
     }else {
         $user->graduateDegree = $_POST["graduateDegree"];
     }
@@ -214,7 +190,7 @@ if(isset($_POST["submit"])){
     }
 
     if(empty($_POST["alumniMembership"])){
-        $user->alumniChapterMembership = "N/A";
+        $user->alumniChapterMembership = "none";
     }else {
         $user->alumniChapterMembership = $_POST["alumniMembership"];
     }
@@ -229,6 +205,7 @@ if(isset($_POST["submit"])){
 
     }else {
         $user->username = $_POST["userM"];
+        $sesUse = $user->username;
     }
 
     if(empty($_POST["regPassword"])){
@@ -246,62 +223,129 @@ if(isset($_POST["submit"])){
 
     if($user->lastName && $user->firstName && $user->middleName && $user->homeAddress && $user->gender && $user->civilStatus && $user->elementary && $user->elementaryYearGraduated && $user->highSchool && $user->highSchoolYearGraduated && $user->cellphoneNo && $user->email && $user->username && $user->regPassword && $user->confirmPassword){
 
+        $checkCount = 0;
+
         if(!preg_match("/^[a-zA-Z. ]*$/", $user->lastName)){ 
             $err = "Last Name";
             $result = "should not have numbers or symbols.";
-            include(SHARED_PATH . '/warning.php');
-            include(SHARED_PATH . '/warningColorLastName.php');
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorLastName.php");
+            $checkCount += 1;
             
         }else{
-            include(SHARED_PATH . '/removeWarningColorLastName.php');
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorLastName.php");
         }
 
         if(!preg_match("/^[a-zA-Z. ]*$/", $user->firstName)){ 
             $err = "First Name";
             $result = "should not have numbers or symbols.";
-            include(SHARED_PATH . '/warning.php');
-            include(SHARED_PATH . '/warningColorFirstName.php');
-         }else{
-            include(SHARED_PATH . '/removeWarningColorFirstName.php');
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorFirstName.php");
+            $checkCount += 1;
+            
+        }else{
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorFirstName.php");
          }
 
         if(!preg_match("/^[a-zA-Z ]*$/", $user->middleName)){ 
             $err = "Middle Name";
             $result = "should not have numbers or symbols.";
-            include(SHARED_PATH . '/warning.php');
-            include(SHARED_PATH . '/warningColorMiddleName.php');
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorMiddleName.php");
+            $checkCount += 1;
+            
         }else{
-            include(SHARED_PATH . '/removeWarningColorMiddleName.php');
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorMiddleName.php");
          }
+
+         if(!preg_match("/^[0-9]*$/", $user->officeTelephoneNo)){ 
+            $err = "Office Telephone Number";
+            $result = "should contain numbers only.";
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorOfficeTelNo.php");
+            $checkCount += 1;
+            
+        }else{
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorOfficeTelNo.php");
+         }
+
+         if(!preg_match("/^[0-9]*$/", $user->cellphoneNo)){ 
+            $err = "Cell Phone Number";
+            $result = "should contain numbers only.";
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorCellNo.php");
+            $checkCount += 1;
+            
+        }else{
+            
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorCellNo.php");
+         }
+
+         if(strlen($user->cellphoneNo) <= 10){
+            $err = "Cell Phone Number";
+            $result = "should not be less than 11 digits.";
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorCellNo.php");
+            $checkCount += 1;
+
+        }else{
+
+            if($checkCount >= 1){
+                $checkCount - 1;
+            }
+            include("private/bins/shared/removeWarningColorCellNo.php");
+
+        }
 
          if(!filter_var($user->email, FILTER_VALIDATE_EMAIL)){
             $err = "Email Address";
             $result = "should contain proper format with '@' symbol and '.com'";
-            include(SHARED_PATH . '/warning.php');
-            include(SHARED_PATH . '/warningColorEmail.php');
+            include("private/bins/shared/warning.php");
+            include("private/bins/shared/warningColorEmail.php");
          }else{
-            include(SHARED_PATH . '/removeWarningColorEmail.php');
+            include("private/bins/shared/removeWarningColorEmail.php");
             if(strlen($user->username) <= 8){
                 $err = "User Name";
                 $result = "should have at least combinations of 9 alpha numeric symbols.";
-                include(SHARED_PATH . '/warning.php');
-                include(SHARED_PATH . '/warningColorUserName.php');
+                include("private/bins/shared/warning.php");
+                include("private/bins/shared/warningColorUserName.php");
             }else{
-                include(SHARED_PATH . '/removeWarningColorUserName.php');
+                include("private/bins/shared/removeWarningColorUserName.php");
                 if(strlen($user->regPassword) <= 8){
                     $err = "Password";
                     $result = "should have at least combinations of 9 alpha numeric symbols.";
-                    include(SHARED_PATH . '/warning.php');
-                    include(SHARED_PATH . '/warningColorRegPassword.php');
+                    include("private/bins/shared/warning.php");
+                    include("private/bins/shared/warningColorRegPassword.php");
                 }else{
-                    include(SHARED_PATH . '/removeWarningColorRegPassword.php');
+                    include("private/bins/shared/removeWarningColorRegPassword.php");
                     if($user->confirmPassword != $user->regPassword){
                         $err = "Confirm Password";
                         $result = "should match to the password you typed.";
-                        include(SHARED_PATH . '/warning.php');
-                        include(SHARED_PATH . '/warningColorConfirmPassword.php');
+                        include("private/bins/shared/warning.php");
+                        include("private/bins/shared/warningColorConfirmPassword.php");
                     }else{
-                        include(SHARED_PATH . '/removeWarningColorConfirmPassword.php');
+
+                        if($checkCount >= 1){
+                           
+                        }else{
+
+                        $_SESSION["useM"] = $sesUse;
+                        include("private/bins/shared/removeWarningColorConfirmPassword.php");
                         $query = "INSERT INTO usrs (lastName,firstName,middleName,
                         homeAddress,gender,civilStatus,employmentAddress,currentWork,
                         currentPosition,elementary,elementaryYearGraduated,highSchool,
@@ -331,10 +375,15 @@ if(isset($_POST["submit"])){
                         $a = md5(rand(1,9));
                         $b = md5(rand(1,9));
                         $c = md5(rand(1,9));
-                        // $ab = md5(rand(a,b));
+                        $permitted_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        $o = substr(str_shuffle($permitted_chars), 0, 4);
+                        $ab = md5(rand(1,5));
                         $t = rand(1,6);
+                        
+                        
+                        echo"<script>window.location.href='private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+                        // header('Location: private/user');
 
-                        header('Location: ?=Success!'.$a.'&&ready_'.$t.'='.$ab.'&&redir_'.$t.'='.$b.$c);
 
                         // mysqli_query($connections, "INSERT INTO usrs (lastName,firstName,middleName,
                         // homeAddress,gender,civilStatus,employmentAddress,currentWork,
@@ -351,6 +400,7 @@ if(isset($_POST["submit"])){
                         // '$user->graduateDegree','$user->officeTelephoneNo','$user->cellphoneNo',
                         // '$user->alumniChapterMembership','$user->email','$user->username',
                         // '$user->confirmPassword','2')");
+                        }
                     }
                 }
             }
@@ -552,14 +602,14 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="regPassword">Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->regPassword; ?>" name="regPassword" id="regPassword" autocomplete="off" placeholder="Password" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $user->regPassword; ?>" name="regPassword" id="regPassword" autocomplete="off" placeholder="Password" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="confirmPassword">Confirm Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="off" placeholder="Confirm Password" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $user->confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="off" placeholder="Confirm Password" required></td>
     </tr>
     </div>
 
@@ -591,6 +641,6 @@ if(isset($_POST["submit"])){
 <br>
 <?php
 
-    include(SHARED_PATH . '/footer.php');
+    include("private/bins/shared/footer.php");
 
 ?>

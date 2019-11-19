@@ -16,10 +16,10 @@
     <!-- <link rel="revision" href="https://johnhumbertduran.github.io/MyPortfolio2.0/" />
     <link rel="shortlink" href="https://johnhumbertduran.github.io/MyPortfolio2.0/" />
     <link rel="canonical" href="https://johnhumbertduran.github.io/MyPortfolio2.0/" /> -->
-    <link rel="icon" type="image/png" href="<?php echo url_for('public/images/logo.png'); ?>">
+    <link rel="icon" type="image/png" href="public/images/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="<?php echo url_for('public/styles/styles.css'); ?>">
+    <link rel="stylesheet" href="public/styles/styles.css">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
     

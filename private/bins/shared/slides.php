@@ -11,13 +11,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?php echo url_for('public/images/1.jpg'); ?>" alt="Image 1" width="1100" height="500">
+      <img src="public/images/1.jpg" alt="Image 1" width="1100" height="500">
     </div>
     <div class="carousel-item">
-      <img src="<?php echo url_for('public/images/2.jpg'); ?>" alt="Image 2" width="1100" height="500">
+      <img src="public/images/2.jpg" alt="Image 2" width="1100" height="500">
     </div>
     <div class="carousel-item">
-      <img src="<?php echo url_for('public/images/3.jpg'); ?>" alt="Image 3" width="1100" height="500">
+      <img src="public/images/3.jpg" alt="Image 3" width="1100" height="500">
     </div>
   </div>
   

@@ -1,12 +1,12 @@
 <?php
+session_start();
 
+// require_once('../bins/initialize.php');
 
-require_once('../bins/initialize.php');
-
-include(SHARED_PATH . '/header.php');
-include(SHARED_PATH . '/connections.php');
-include(SHARED_PATH . '/slides.php');
-include(SHARED_PATH . '/admin_nav.php');
+include("../bins/shared/header.php");
+include("../bins/shared/connections.php");
+include("../bins/shared/slides.php");
+include("../bins/shared/admin_nav.php");
 
 $query_info = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
 $my_info = mysqli_fetch_assoc($query_info);
@@ -40,6 +40,6 @@ $img = $my_info["img"];
 
 <?php
 
-    include(SHARED_PATH . '/footer.php');
+    include("private/bins/shared/footer.php");
 
 ?>

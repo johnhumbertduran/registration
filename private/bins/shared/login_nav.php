@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $permitted_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $sesUse = $logUse = "";
@@ -139,7 +139,6 @@ if(isset($_POST["logsIn"])){
 ?>
 
 <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
-  <!-- <a class="navbar-brand" href="../registration"><img src="<?php echo url_for('public/images/logo.png'); ?>" alt="ACC Logo" srcset="" width="30" height="30"></a> -->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -148,16 +147,19 @@ if(isset($_POST["logsIn"])){
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" id="home" href="../registration">Home</a>
+      <a class="nav-link" id="home" href="index">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="about" href="<?php echo url_for('/about'); ?>">About</a>
+      <a class="nav-link" id="about" href="about">About</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="contact" href="contact">Contact</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="register" href="register">Register</a>
+    </li>
+    <li class="nav-item">
+      <input class="form-control" id="myInput" type="text" placeholder="Search.." autocomplete="off">
     </li>
     <br>
       <div class="container floating d-flex justify-content-end">

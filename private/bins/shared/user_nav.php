@@ -1,5 +1,6 @@
 <?php
 
+
 if(isset($_SESSION["useM"])){
 
   $sesUse = $_SESSION["useM"];
@@ -19,7 +20,7 @@ if(isset($_SESSION["useM"])){
   
   // echo "<script>window.location.href='a';</script>";
   // header('Location: ../private/user');
-  header('Location: ../');
+  header('Location: ../../');
   // echo "<script>window.location.href='private/user?=Success!'.$r.'&&ready_'.$qw.'='.$lp.'&&redir_'.$qw.'='.$hg.$o';</script>";
 
 }

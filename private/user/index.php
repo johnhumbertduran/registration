@@ -1,12 +1,12 @@
 <?php
+session_start();
 
+// require_once('../bins/initialize.php');
 
-require_once('../bins/initialize.php');
-
-include(SHARED_PATH . '/header.php');
-include(SHARED_PATH . '/connections.php');
-include(SHARED_PATH . '/slides.php');
-include(SHARED_PATH . '/user_nav.php');
+include("../../private/bins/shared/user_header.php");
+include("../../private/bins/shared/connections.php");
+include("../../private/bins/shared/user_slides.php");
+include("../../private/bins/shared/user_nav.php");
 
 $query_info = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
 $my_info = mysqli_fetch_assoc($query_info);
@@ -20,8 +20,10 @@ $work = ucfirst($my_info["currentWork"]);
 $workPosition = ucfirst($my_info["currentPosition"]);
 $email = $my_info["email"];
 
-$fullName = $firstName . " " . $middleName[0]. ". " . $lastName;
+$fullName = $firstName . " " . $middleName[0] . ". " . $lastName;
 
+
+$tmp_img = "tmp_icn/tmp_icon.png";
 ?>
 
 <style>
@@ -74,7 +76,7 @@ $uploadErr = "";
 
 if(isset($_POST["btnUpload"])){
 
-    $target_file = $target_dir . "/" . basename($_FILES["profile_pic"]["name"]);
+    $target_file = $target_dir . basename($_FILES["profile_pic"]["name"]);
     $uploadOk = 1;
 
     if(file_exists($target_file)){
@@ -114,7 +116,8 @@ if(isset($_POST["btnUpload"])){
             mysqli_query($connections, "UPDATE usrs SET img='$target_file' WHERE usrname='$sesUse'");
             $notify = "<font color=green> Your photo has been uploaded! </font>";
             // echo "<script> window.location.href='MyAccount?notify=$notify';</script>";
-              header('Location: ?&&' . $x . "_" . $qw . "=" . $r . "&&" . $o . "=" . $hg);
+            echo "<script>window.location.href='?&&$x';</script>";
+            //   header('Location: ?&&' . $x . "_" . $qw . "=" . $r . "&&" . $o . "=" . $hg);
 
 
         }else{
@@ -144,7 +147,12 @@ if(empty($_GET["notify"])){
         <?php
         
         if($img == ""){
-            echo "<center> No photo </center>";
+            echo "<center>
+            <div class='dp_cover'>
+                <img src='$tmp_img' class='dp' alt='profile_pic' srcset=''>
+                <div class='upload'><a href='#' data-toggle='modal' data-target='#upload_photo'>Upload</a><br><br></div>
+            </div>
+        </center>";
         }else{
             echo "<center>
                     <div class='dp_cover'>
@@ -252,6 +260,6 @@ if(empty($_GET["notify"])){
 
 <?php
 
-    include(SHARED_PATH . '/footer.php');
+    include("../bins/shared/footer.php");
 
 ?>

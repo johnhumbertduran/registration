@@ -3,12 +3,12 @@
 
 <?php
 
-    require_once('private/bins/initialize.php');
+    // require_once('private/bins/initialize.php');
 
-    include(SHARED_PATH . '/header.php');
-    include(SHARED_PATH . '/connections.php');
-    include(SHARED_PATH . '/slides.php');
-    include(SHARED_PATH . '/login_nav.php');
+    include("private/bins/shared/header.php");
+    include("private/bins/shared/connections.php");
+    include("private/bins/shared/slides.php");
+    include("private/bins/shared/login_nav.php");
 
 ?>
 
@@ -38,6 +38,6 @@ document.getElementById("about").classList.add("active_nav");
 
 <?php
 
-    include(SHARED_PATH . '/footer.php');
+    include("private/bins/shared/footer.php");
 
 ?>

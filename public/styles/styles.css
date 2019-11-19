@@ -160,3 +160,18 @@ label{
 .userHover:hover{
     text-decoration: underline;
 }
+
+.car_div_img{
+    width: 80%;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgb(42, 196, 67);
+}
+
+.card_img{
+    /* width: 50%; */
+    object-fit: cover;
+    width: 210px;
+    height: 210px;
+}
