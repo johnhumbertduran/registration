@@ -158,9 +158,6 @@ if(isset($_POST["logsIn"])){
     <li class="nav-item">
       <a class="nav-link" id="register" href="register">Register</a>
     </li>
-    <li class="nav-item">
-      <input class="form-control" id="myInput" type="text" placeholder="Search.." autocomplete="off">
-    </li>
     <br>
       <div class="container floating d-flex justify-content-end">
           <form method="POST" class="form-inline">

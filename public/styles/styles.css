@@ -175,3 +175,13 @@ label{
     width: 210px;
     height: 210px;
 }
+
+.card_hover:hover{
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+#input_scroll{
+    /* width: 100%; */
+    position: relative;
+    z-index: 1;
+}

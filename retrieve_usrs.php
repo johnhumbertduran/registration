@@ -11,10 +11,8 @@
 <?php
 
 
-$usrs_cnt = mysqli_query($connections, "SELECT COUNT(id) c FROM usrs WHERE account_type='2'");
 $usrs_qry = mysqli_query($connections, "SELECT * FROM usrs WHERE account_type='2'");
 
-$rrr = mysqli_fetch_assoc($usrs_cnt);
 
 while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
 
@@ -33,7 +31,7 @@ while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
 ?>
 <div class="col-sm-3" width="100%">
 
-<div class='card' style='width:270px; height:500px;'>    
+<div class='card card_hover' style='width:270px; height:500px;'>    
     <center>
       <?php if($img == ""){?>
 
