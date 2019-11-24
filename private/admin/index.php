@@ -3,9 +3,9 @@ session_start();
 
 // require_once('../bins/initialize.php');
 
-include("../bins/shared/header.php");
+include("../bins/shared/admin_header.php");
 include("../bins/shared/connections.php");
-include("../bins/shared/slides.php");
+// include("../bins/shared/slides.php");
 include("../bins/shared/admin_nav.php");
 
 $query_info = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
@@ -16,8 +16,29 @@ $img = $my_info["img"];
 ?>
 
 
+<div class="input-group mb-3" id="admin_input_scroll">
+    <input type="text" name="search" class="form-control" id="myEmail" placeholder="Search.." autocomplete="off" onchange="setUrlRemove()">
+    <div class="input-group-append">
+    <button class="btn btn-success" name="searchBtn" type="submit" onclick="setUrlRemove()">Search</button>
+    </div>
+</div>
 
-<center>
+<br>
+
+<?php
+    if(empty($_GET["search"])){
+?>
+    <div id="usrs">
+    <?php	include("admin_retrieve_usrs.php"); ?>
+    </div>
+<?php }else{
+?>
+    <div id="usrs">
+    <?php	include("admin_search_usrs.php"); ?>
+    </div>
+<?php } ?>
+
+<!-- <center>
 <div class="lorem">
 <p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam.</p>
 <p>At mnesarchum disputationi ius, euismod equidem qualisque vis ne, sonet singulis vis cu. At eam soleat iudicabit, ad eam intellegat abhorreant incorrupte.</p>
@@ -36,10 +57,10 @@ $img = $my_info["img"];
 </p>Nec ad alii ferri affert, duis ullum audire in est. Sit an natum consequat intellegat, constituto adversarium ex eam, ne ferri voluptaria nec.</p>
 
 </div>
-</center>
+</center> -->
 
 <?php
 
-    include("private/bins/shared/footer.php");
+    include("../bins/shared/footer.php");
 
 ?>

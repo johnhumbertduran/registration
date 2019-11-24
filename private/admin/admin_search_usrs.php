@@ -1,10 +1,24 @@
 <?php
 
-include("private/bins/shared/connections.php");
+include("../bins/shared/connections.php");
 
+    if(isset($_POST["remove_yes"])){
+      
+      if(empty($_POST["final_id"])){
+
+      }else{
+        $my_id = $_POST["final_id"];
+      }
+      if($my_id){
+        echo "<script>window.location.href='?Successfully Deleted!';</script>";
+        mysqli_query($connections,"DELETE FROM usrs where id='$my_id'");
+      }
+    }
 ?>
 
 <div class="container">
+
+<br>
 
 <center>
 <div class="card-deck">
@@ -46,6 +60,7 @@ if(empty($_GET["search"])){
 					while($row = mysqli_fetch_assoc($query)){
 					
                         $account_type = $row["account_type"];
+                        $id = $row["id"];
                         $img = $row["img"];
                         $firstName = ucfirst($row["firstName"]);
                         $middleName = $row["middleName"];
@@ -66,12 +81,12 @@ if(empty($_GET["search"])){
         <br>
         
         <div class='car_div_img'>
-            <img class='card-img-top card_img' src='private/user/tmp_icn/tmp_icon.png' alt='<?php echo $fullName; ?>'>
+            <img class='card-img-top card_img' src='../user/tmp_icn/tmp_icon.png' alt='<?php echo $fullName; ?>'>
         </div>
       <?php }else{?>
         <br>
         <div class='car_div_img'>
-            <img class='card-img-top card_img' src='<?php echo "private/user/" . $img; ?>' alt='<?php echo $fullName; ?>'>
+            <img class='card-img-top card_img' src='<?php echo "../user/" . $img; ?>' alt='<?php echo $fullName; ?>'>
         </div>
       <?php } ?>
     </center>
@@ -84,11 +99,45 @@ if(empty($_GET["search"])){
 
   <div class="card-footer">
     <a href='#' class='btn btn-primary'>See Profile</a>
+    <a href='' class='btn btn-danger' data-toggle="modal" data-target="#myModal<?php echo $id; ?>" onchange="setUrlRemove()">Remove</a>    
   </div>
 </div>
 
 <br>
 </div>
+
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal<?php echo $id; ?>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Remove <font color="green"><?php echo $firstName; ?></font>?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <h3><font color="red">This action cannot be undo.</font></h3>
+            <form method="post">
+                <input type="text" name="yes_remove" value="<?php echo $id; ?>">
+                <input type="text" name="final_id" value="<?php $my_id = $id; echo $my_id; ?>">
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+          
+              <input type="submit" value="Yes" name="remove_yes" class="btn btn-success">
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
 
 
 <?php

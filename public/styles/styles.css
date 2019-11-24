@@ -185,3 +185,12 @@ label{
     position: relative;
     z-index: 1;
 }
+
+#myModal{
+    display: block;
+}
+
+#admin_input_scroll{
+    position: fixed;
+    z-index: 1;
+}
