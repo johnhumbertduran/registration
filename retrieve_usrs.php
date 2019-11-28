@@ -55,7 +55,7 @@ while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
   </div>
 
   <div class="card-footer">
-    <a href='#' class='btn btn-primary'>See Profile</a>
+    <a href='?view=<?php echo $firstName; ?>' class='btn btn-primary'>See Profile</a>
   </div>
 </div>
 

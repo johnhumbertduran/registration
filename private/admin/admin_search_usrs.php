@@ -70,7 +70,7 @@ if(empty($_GET["search"])){
                         $workPosition = ucfirst($row["currentPosition"]);
                         $email = $row["email"];
                                         
-                        $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;    
+                        $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;
 ?>
 <div class="col-sm-3" width="100%">
 

@@ -82,17 +82,38 @@
 </div>
 
 <?php
-    if(empty($_GET["search"])){
+    if(!empty($_GET["search"]) && !empty($_GET["view"]) ){
 ?>
     <div id="usrs">
     <?php	include("retrieve_usrs.php"); ?>
     </div>
 <?php }else{
 ?>
+
+<?php } ?>
+
+<?php
+if(empty($_GET["view"])){
+?>
+
+<?php
+}else{
+
+    include("view_profile.php");
+}
+?>
+
+<?php
+    if(!empty($_GET["search"])){
+?>
+
+<?php }else{
+?>
     <div id="usrs">
     <?php	include("search_usrs.php"); ?>
     </div>
 <?php } ?>
+
 
 <!-- 
 <p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>

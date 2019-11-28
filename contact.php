@@ -46,6 +46,6 @@ document.title += " / Contact";
 
 <?php
 
-    include(SHARED_PATH . '/footer.php');
+    include("private/bins/shared/footer.php");
 
 ?>
