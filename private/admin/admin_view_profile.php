@@ -1,6 +1,6 @@
 <?php
 
-include("private/bins/shared/connections.php");
+include("../bins/shared/connections.php");
 
 ?>
 
@@ -24,7 +24,7 @@ $workPosition = ucfirst($row["currentPosition"]);
 $email = $row["email"];
                 
 $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;
-$tmp_img = "private/user/tmp_icn/tmp_icon.png";
+$tmp_img = "../user/tmp_icn/tmp_icon.png";
 ?>
 
 
@@ -41,7 +41,7 @@ $tmp_img = "private/user/tmp_icn/tmp_icon.png";
         }else{
             echo "<center>
                     <div class='dp_cover'>
-                        <img src='private/user/$img' class='dp' alt='profile_pic' srcset=''>
+                        <img src='../user/$img' class='dp' alt='profile_pic' srcset=''>
                     </div>
                 </center>";
         }

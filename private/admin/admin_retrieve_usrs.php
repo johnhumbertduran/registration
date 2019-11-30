@@ -71,7 +71,7 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
   </div>
 
   <div class="card-footer input-group justify-content-center">
-    <a href='#' class='btn btn-primary'>See Profile</a>&nbsp;
+    <a href='?view=<?php echo $firstName; ?>' class='btn btn-primary'>See Profile</a>&nbsp;
     <a href='' class='btn btn-danger' data-toggle="modal" data-target="#myModal<?php echo $id; ?>" onchange="setUrlRemove()">Remove</a>
   </div>
 </div>

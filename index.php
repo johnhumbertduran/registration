@@ -81,38 +81,23 @@
     <!-- </form> -->
 </div>
 
+
+
 <?php
-    if(!empty($_GET["search"]) && !empty($_GET["view"]) ){
-?>
+
+if(isset($_GET["search"]) && $_GET["search"] != ""){
+include("search_usrs.php");
+}elseif(isset($_GET["view"])){
+include("view_profile.php");
+}else{
+    ?>
     <div id="usrs">
     <?php	include("retrieve_usrs.php"); ?>
     </div>
-<?php }else{
-?>
-
-<?php } ?>
-
-<?php
-if(empty($_GET["view"])){
-?>
-
-<?php
-}else{
-
-    include("view_profile.php");
+    <?php
 }
-?>
 
-<?php
-    if(!empty($_GET["search"])){
 ?>
-
-<?php }else{
-?>
-    <div id="usrs">
-    <?php	include("search_usrs.php"); ?>
-    </div>
-<?php } ?>
 
 
 <!-- 

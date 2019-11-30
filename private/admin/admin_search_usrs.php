@@ -98,7 +98,7 @@ if(empty($_GET["search"])){
   </div>
 
   <div class="card-footer">
-    <a href='#' class='btn btn-primary'>See Profile</a>
+    <a href='?view=<?php echo $firstName; ?>' class='btn btn-primary'>See Profile</a>
     <a href='' class='btn btn-danger' data-toggle="modal" data-target="#myModal<?php echo $id; ?>" onchange="setUrlRemove()">Remove</a>    
   </div>
 </div>
@@ -144,7 +144,7 @@ if(empty($_GET["search"])){
 }
 ?>
 </div>
-</center>
+
 				<?php
 				
 				}else{
@@ -157,7 +157,7 @@ if(empty($_GET["search"])){
 }
 
 ?>
-
+</center>
 
 
 

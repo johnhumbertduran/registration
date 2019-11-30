@@ -83,7 +83,7 @@ if(empty($_GET["search"])){
   </div>
 
   <div class="card-footer">
-    <a href='#' class='btn btn-primary'>See Profile</a>
+    <a href='?view=<?php echo $firstName; ?>' class='btn btn-primary'>See Profile</a>
   </div>
 </div>
 

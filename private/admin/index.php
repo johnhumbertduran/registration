@@ -24,19 +24,27 @@ $img = $my_info["img"];
 </div>
 
 <br>
+<br>
+<br>
+
 
 <?php
-    if(empty($_GET["search"])){
-?>
+
+if(isset($_GET["search"]) && $_GET["search"] != ""){
+include("admin_search_usrs.php");
+}elseif(isset($_GET["view"])){
+include("admin_view_profile.php");
+}else{
+    ?>
     <div id="usrs">
     <?php	include("admin_retrieve_usrs.php"); ?>
     </div>
-<?php }else{
+    <?php
+}
+
 ?>
-    <div id="usrs">
-    <?php	include("admin_search_usrs.php"); ?>
-    </div>
-<?php } ?>
+
+
 
 <!-- <center>
 <div class="lorem">
