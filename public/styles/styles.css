@@ -18,13 +18,17 @@
     /* background-color: yellow; */
 }
 
-label{
+/* label{
     float: right;
-}
+} */
 
 
 .label{
     width: 30%;
+}
+
+.label label{
+    float: right;
 }
 
 .lorem{
@@ -193,4 +197,22 @@ label{
 #admin_input_scroll{
     position: fixed;
     z-index: 1;
+}
+
+#posting{
+    resize: none;
+    width: 100%;
+    background-color: #28a7462f;
+}
+
+#posting::-webkit-scrollbar {
+    display: none;
+  }
+
+.floating_left{
+    float: left;
+}
+
+.floating_right{
+    float: right;
 }

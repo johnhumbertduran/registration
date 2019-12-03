@@ -166,7 +166,7 @@ if(empty($_GET["search"])){
 <script>
 
 var hidden_search = document.getElementById("hidden_search");
-var searchInput = document.getElementById("myInput");
+var searchInput = document.getElementById("myEmail");
 
 searchInput.value = hidden_search.value;
 

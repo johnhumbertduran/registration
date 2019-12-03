@@ -15,6 +15,7 @@ $img = $my_info["img"];
 
 ?>
 
+
 <div class="input-group mb-3" id="admin_input_scroll">
     <input type="text" name="search" class="form-control" id="myEmail" placeholder="Search.." autocomplete="off" onchange="setUrlRemove()">
     <div class="input-group-append">
@@ -22,36 +23,30 @@ $img = $my_info["img"];
     </div>
 </div>
 
+<br>
+<br>
+<br>
+
+
 <?php
 
 if(isset($_GET["search"]) && $_GET["search"] != ""){
 include("admin_search_usrs.php");
+}elseif(isset($_GET["view"])){
+include("admin_view_profile.php");
 }else{
-
+    ?>
+    <div id="usrs">
+    <?php	include("admin_retrieve_usrs.php"); ?>
+    </div>
+    <?php
 }
 
 ?>
 
 
-<br>
-<br>
-<br>
 
-<center>
-<div class="form-group" style=" width: 50%;">
-  <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
-    <textarea class="form-control" name="" id="posting" cols="10" rows="10"></textarea>
-    <p></p>
-    <input type="submit" class="btn btn-primary floating_right" value="Post">
-</div>
-</center>
-
-
-<br>
-<br>
-<br>
-<br>
-<center>
+<!-- <center>
 <div class="lorem">
 <p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam.</p>
 <p>At mnesarchum disputationi ius, euismod equidem qualisque vis ne, sonet singulis vis cu. At eam soleat iudicabit, ad eam intellegat abhorreant incorrupte.</p>
@@ -70,7 +65,7 @@ include("admin_search_usrs.php");
 </p>Nec ad alii ferri affert, duis ullum audire in est. Sit an natum consequat intellegat, constituto adversarium ex eam, ne ferri voluptaria nec.</p>
 
 </div>
-</center>
+</center> -->
 
 <?php
 
