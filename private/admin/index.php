@@ -13,6 +13,8 @@ $my_info = mysqli_fetch_assoc($query_info);
 $account_type = $my_info["account_type"];
 $img = $my_info["img"];
 
+
+$post = "";
 ?>
 
 <div class="input-group mb-3" id="admin_input_scroll">
@@ -30,6 +32,20 @@ include("admin_search_usrs.php");
 
 }
 
+
+if(isset($_POST["post_status_btn"])){
+
+    if(empty($_POST["post_status"])){
+        echo "empty";
+    }else{
+        $post = $_POST["post_status"];
+    }
+
+    if($post){
+        mysqli_query($connections, "UPDATE admin SET post='$post' ");
+        echo "<script>alert('Done'); windows.location.href='index.php'</script>";
+    }
+}
 ?>
 
 
@@ -39,10 +55,12 @@ include("admin_search_usrs.php");
 
 <center>
 <div class="form-group" style=" width: 50%;">
+<form method="POST">
   <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
-    <textarea class="form-control" name="" id="posting" cols="10" rows="10"></textarea>
+    <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
     <p></p>
-    <input type="submit" class="btn btn-primary floating_right" value="Post">
+    <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
+</form>
 </div>
 </center>
 
