@@ -42,8 +42,8 @@ if(isset($_POST["post_status_btn"])){
     }
 
     if($post){
-        mysqli_query($connections, "UPDATE admin SET post='$post' ");
-        echo "<script>alert('Done'); windows.location.href='index.php'</script>";
+        mysqli_query($connections, "INSERT INTO admin_post (post) VALUES ('$post') ");
+        echo "<script> alert('Done'); window.location.href='?'; </script>";
     }
 }
 ?>
@@ -58,7 +58,7 @@ if(isset($_POST["post_status_btn"])){
 <form method="POST">
   <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
-    <p></p>
+    <hr>
     <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
 </form>
 </div>
