@@ -32,6 +32,11 @@ include("admin_search_usrs.php");
 
 }
 
+date_default_timezone_set("Asia/Manila");
+$date_now = date("m/d/Y");
+$time_now = date("h:i a");
+
+$my_time = strtotime($time_now);
 
 if(isset($_POST["post_status_btn"])){
 
@@ -42,7 +47,7 @@ if(isset($_POST["post_status_btn"])){
     }
 
     if($post){
-        mysqli_query($connections, "INSERT INTO admin_post (post) VALUES ('$post') ");
+        mysqli_query($connections, "INSERT INTO admin_post (post,date,time) VALUES ('$post','$date_now','$time_now') ");
         echo "<script> alert('Done'); window.location.href='?'; </script>";
     }
 }
@@ -56,7 +61,9 @@ if(isset($_POST["post_status_btn"])){
 <center>
 <div class="form-group" style=" width: 50%;">
 <form method="POST">
-  <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
+    <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
+    <input type="hidden" name="" id="" value="<?php echo $date_now; ?>">
+    <input type="hidden" name="" id="" value="<?php echo $time_now; ?>">
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
     <hr>
     <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
@@ -69,6 +76,7 @@ if(isset($_POST["post_status_btn"])){
 <br>
 <br>
 <br>
+
 <center>
 <div class="lorem">
 <p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam.</p>
