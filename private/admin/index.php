@@ -66,6 +66,8 @@ if(isset($_POST["post_status_btn"])){
     <input type="hidden" name="" id="" value="<?php echo $time_now; ?>">
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
     <hr>
+    <input type="file" name="file_upload" id="file_upload" class="file_upload" onchange="file_label()" data-multiple-caption="{count} files selected" multiple>
+    <label for="file_upload" class="label_upload" id="label_upload">Upload Image</label>
     <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
 </form>
 </div>
@@ -103,3 +105,15 @@ if(isset($_POST["post_status_btn"])){
     include("../bins/shared/footer.php");
 
 ?>
+
+<script>
+    var file_input = document.getElementById("file_upload");
+    var label_inputs = document.getElementById("label_upload");
+    var inputs = document.querySelectorAll( '.file_upload' );
+
+    function file_label(){
+        label_inputs.innerHTML = file_input.value;
+    }
+
+
+</script>

@@ -216,3 +216,26 @@
 .floating_right{
     float: right;
 }
+
+.file_upload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.label_upload{
+    background-color: rgb(27, 116, 27);
+    color: aliceblue;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.label_upload:hover{
+    background-color: rgb(32, 151, 32);
+    box-shadow: -3px 3px 7px black;
+    /* color: rgb(38, 45, 51); */
+    cursor: pointer;
+}
