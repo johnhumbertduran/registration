@@ -48,7 +48,7 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
     </li>
 
     <li class="nav-item userHover">
-      <a class="nav-link" href="#">Comunity</a>
+      <a class="nav-link" href="community">Comunity</a>
     </li>
 
     <li class="nav-item userHover">

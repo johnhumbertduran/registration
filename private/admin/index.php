@@ -59,15 +59,15 @@ if(isset($_POST["post_status_btn"])){
 <br>
 
 <center>
-<div class="form-group" style=" width: 50%;">
+<div class="form-group" style=" width: 50%; ">
 <form method="POST">
     <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
     <input type="hidden" name="" id="" value="<?php echo $date_now; ?>">
     <input type="hidden" name="" id="" value="<?php echo $time_now; ?>">
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
+
+
     <hr>
-    <input type="file" name="file_upload" id="file_upload" class="file_upload" onchange="file_label()" data-multiple-caption="{count} files selected" multiple>
-    <label for="file_upload" class="label_upload" id="label_upload">Upload Image</label>
     <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
 </form>
 </div>
@@ -106,14 +106,53 @@ if(isset($_POST["post_status_btn"])){
 
 ?>
 
+<style>
+    img{ height: 100px; }
+</style>
+
 <script>
     var file_input = document.getElementById("file_upload");
     var label_inputs = document.getElementById("label_upload");
     var inputs = document.querySelectorAll( '.file_upload' );
+    var _URL = window.URL || window.webkitURL;
+    var prev = document.getElementById("preview");
+    var img = new Image();
+    var uploadBtn = document.getElementById("uploadPhotoBtn");
+    var cancelBtn = document.getElementById("cancel_btn");
 
-    function file_label(){
-        label_inputs.innerHTML = file_input.value;
+    // function file_label(){
+    //     label_inputs.innerHTML = file_input.value;
+    // }
+
+    function file_label(files){
+
+    var file = files[0];
+    var sizeKB = file.size / 1024;
+
+
+    if(prev == ""){
+
+    }else{
+
+    uploadBtn.style.display = "inline";
+    cancelBtn.style.display = "inline";
+    img.onload = function(){
+        $('#preview').append(img);
+    }
+    label_inputs.innerHTML = file_input.value;
+
+    img.src = _URL.createObjectURL(file);
+    }
     }
 
+    function closeUploadPhoto(){
+        // prev.innerHTML = "";
+        file_input.value = "";
+        label_inputs.innerHTML = "Upload Image";
+        img.src = "";
+        uploadBtn.style.display = "none";
+        cancelBtn.style.display = "none";
+        // alert("hay");
+    }
 
 </script>

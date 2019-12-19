@@ -155,6 +155,10 @@
     display: none;
 }
 
+#cancel_btn{
+    display: none;
+}
+
 .basic_info{
     border: 1px solid rgba(151, 151, 151, 0.842);
     width: 80%;
@@ -238,4 +242,25 @@
     box-shadow: -3px 3px 7px black;
     /* color: rgb(38, 45, 51); */
     cursor: pointer;
+}
+
+.content{
+    width: 80%;
+    border: 1px solid rgba(128, 128, 128, 0.363);
+}
+
+.date_time{
+    /* background-color: greenyellow; */
+    margin-bottom: -20px;
+    /* width: 30%; */
+}
+
+.add_img{
+    width: 100%;
+    height: 50px;
+}
+
+.post_img{
+    width: 100%;
+    /* overflow: hidden; */
 }
