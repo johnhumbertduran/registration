@@ -260,6 +260,6 @@ if(empty($_GET["notify"])){
 
 <?php
 
-    include("../bins/shared/footer.php");
+    include("../bins/shared/private_footer.php");
 
 ?>

@@ -26,6 +26,10 @@ $post = "";
 
 <?php
 
+
+// statement if you click the search button.
+// This will trigger to retrieve data of what you searched for.
+// View profile is added also here.
 if(isset($_GET["search"]) && $_GET["search"] != ""){
 include("admin_search_usrs.php");
 }else{
@@ -59,9 +63,9 @@ if(isset($_POST["post_status_btn"])){
 <br>
 
 <center>
-<div class="form-group" style=" width: 50%; ">
+<div class="form-group post_div" style=" width: 50%; ">
 <form method="POST">
-    <label for="posting" class="floating_left"><h4>Post a status:</h4></label>
+    <label for="posting" class="floating_left"><h4>Post a status</h4></label>
     <input type="hidden" name="" id="" value="<?php echo $date_now; ?>">
     <input type="hidden" name="" id="" value="<?php echo $time_now; ?>">
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
@@ -102,7 +106,7 @@ if(isset($_POST["post_status_btn"])){
 
 <?php
 
-    include("../bins/shared/footer.php");
+    include("../bins/shared/private_footer.php");
 
 ?>
 
