@@ -25,7 +25,7 @@ $post = "";
 ?>
 <?php
 
-$post_info = mysqli_query($connections, "SELECT * FROM admin_post ");
+$post_info = mysqli_query($connections, "SELECT * FROM admin_post ORDER BY date DESC, time DESC ");
 
 
 while($my_post_info = mysqli_fetch_assoc($post_info)){
@@ -101,6 +101,6 @@ if($img == ""){
 
 <?php
 
-    include("../bins/shared/footer.php");
+    include("../bins/shared/private_footer.php");
 
 ?>

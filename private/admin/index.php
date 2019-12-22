@@ -63,11 +63,14 @@ if(isset($_POST["post_status_btn"])){
 <br>
 
 <center>
-<div class="form-group post_div" style=" width: 50%; ">
+
+<div class="container clearfix">
+<label for="posting" class="_collapsing"  data-toggle="collapse" data-target="#postings"><h4>Post a status</h4></label>
+<!-- <button data-toggle="collapse" data-target="#postings">Collapsible</button> -->
+    <div id="postings" class="collapse hide">
 <form method="POST">
-    <label for="posting" class="floating_left"><h4>Post a status</h4></label>
-    <input type="hidden" name="" id="" value="<?php echo $date_now; ?>">
-    <input type="hidden" name="" id="" value="<?php echo $time_now; ?>">
+    <input type="hidden" value="<?php echo $date_now; ?>">
+    <input type="hidden" value="<?php echo $time_now; ?>">
     <textarea class="form-control" name="post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
 
 
@@ -75,8 +78,13 @@ if(isset($_POST["post_status_btn"])){
     <input type="submit" name="post_status_btn" class="btn btn-primary floating_right" value="Post">
 </form>
 </div>
+</div>
+
+
 </center>
 
+
+<hr>
 
 <br>
 <br>
@@ -104,11 +112,6 @@ if(isset($_POST["post_status_btn"])){
 </div>
 </center>
 
-<?php
-
-    include("../bins/shared/private_footer.php");
-
-?>
 
 <style>
     img{ height: 100px; }
@@ -160,3 +163,10 @@ if(isset($_POST["post_status_btn"])){
     }
 
 </script>
+
+
+<?php
+
+    include("../bins/shared/private_footer.php");
+
+?>

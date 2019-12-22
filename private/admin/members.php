@@ -69,6 +69,6 @@ include("admin_view_profile.php");
 
 <?php
 
-    include("../bins/shared/footer.php");
+    include("../bins/shared/private_footer.php");
 
 ?>
