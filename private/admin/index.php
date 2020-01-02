@@ -117,7 +117,7 @@ $_time = $my_post_info["time"];
 <?php
 if($img == ""){
 ?>
-<a href="#" class="btn btn-success add_img">Add image</a>
+<a href="add_post_img" class="btn btn-success add_img">Add image</a>
 <?php
 }else{
 ?>
