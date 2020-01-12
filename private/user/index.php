@@ -27,7 +27,7 @@ $tmp_img = "tmp_icn/tmp_icon.png";
 ?>
 
 <style>
-    img{ height: 150px; }
+    .dp{ height: 150px; }
 </style>
 
 <script>
@@ -49,6 +49,7 @@ $tmp_img = "tmp_icn/tmp_icon.png";
         img.onload = function(){
             $('#preview').append(img);
         }
+        img.classList.add("dp");
 
         img.src = _URL.createObjectURL(file);
         }
@@ -229,9 +230,60 @@ if(empty($_GET["notify"])){
     </div>
 
 
+<?php
+
+$post_info = mysqli_query($connections, "SELECT * FROM admin_post ORDER BY date DESC, time DESC ");
 
 
+while($my_post_info = mysqli_fetch_assoc($post_info)){
+$post = $my_post_info["post"];
+$post_id = $my_post_info["id"];
+$img_post = "../admin/".$my_post_info["img"];
+$_date = $my_post_info["date"];
+$_time = $my_post_info["time"];
+?>
+
+
+
+<br>
 <center>
+
+<div class="container-fluid mr-5" style="width:70%;">
+
+<div class="content">
+    <div class="d-flex ml-auto date_time pl-3 mt-1">
+        <p><?php echo $_date; ?></p>
+    </div>
+
+    <div class="d-flex ml-auto pl-3">
+        <p><?php echo $_time; ?></p>
+    </div>
+    
+    <p><?php echo $post; ?></p>
+
+<?php
+if(!empty($img_post)){
+?>
+<div class="">
+    <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:50%">
+</div>
+<?php
+}
+?>
+
+
+</div>
+
+</div>
+
+<?php
+}
+
+?>
+</center>
+
+
+<!-- <center>
 <div class="lorem">
 <p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam.</p>
 <p>At mnesarchum disputationi ius, euismod equidem qualisque vis ne, sonet singulis vis cu. At eam soleat iudicabit, ad eam intellegat abhorreant incorrupte.</p>
@@ -250,7 +302,7 @@ if(empty($_GET["notify"])){
 </p>Nec ad alii ferri affert, duis ullum audire in est. Sit an natum consequat intellegat, constituto adversarium ex eam, ne ferri voluptaria nec.</p>
 
 </div>
-</center>
+</center> -->
 
 <script>
 

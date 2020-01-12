@@ -28,7 +28,7 @@ $tmp_img = "../user/tmp_icn/tmp_icon.png";
 ?>
 
 
-<div class="container left_content">
+<div class="container">
         <div>
         <?php
         
@@ -68,7 +68,7 @@ $tmp_img = "../user/tmp_icn/tmp_icon.png";
     
 
     
-<center>
+<!-- <center>
 <div class="lorem">
 <p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam.</p>
 <p>At mnesarchum disputationi ius, euismod equidem qualisque vis ne, sonet singulis vis cu. At eam soleat iudicabit, ad eam intellegat abhorreant incorrupte.</p>
@@ -87,5 +87,5 @@ $tmp_img = "../user/tmp_icn/tmp_icon.png";
 </p>Nec ad alii ferri affert, duis ullum audire in est. Sit an natum consequat intellegat, constituto adversarium ex eam, ne ferri voluptaria nec.</p>
 
 </div>
-</center>
+</center> -->
 

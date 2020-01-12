@@ -93,10 +93,10 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
         
         <!-- Modal body -->
         <div class="modal-body">
-            <h3><font color="red">This action cannot be undo.</font></h3>
+            <h3><font color="red">This action cannot be undone.</font></h3>
             <form method="post">
-                <input type="text" name="yes_remove" value="<?php echo $id; ?>">
-                <input type="text" name="final_id" value="<?php $my_id = $id; echo $my_id; ?>">
+                <input type="hidden" name="yes_remove" value="<?php echo $id; ?>">
+                <input type="hidden" name="final_id" value="<?php $my_id = $id; echo $my_id; ?>">
         </div>
         
         <!-- Modal footer -->

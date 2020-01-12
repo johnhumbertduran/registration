@@ -47,9 +47,9 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
       <a class="nav-link" href="../admin">Home</a>
     </li>
 
-    <li class="nav-item userHover">
+    <!-- <li class="nav-item userHover">
       <a class="nav-link" href="community">Comunity</a>
-    </li>
+    </li> -->
 
     <li class="nav-item userHover">
       <a class="nav-link" href="members">Members</a>
@@ -60,7 +60,7 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
         <?php echo $userN; ?>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Account Settings</a>
+        <a class="dropdown-item" href="admin_account_settings">Account Settings</a>
         <a class="dropdown-item" href="#">Link 2</a>
         <a class="dropdown-item" href="logOut">Log Out</a>
       </div>
