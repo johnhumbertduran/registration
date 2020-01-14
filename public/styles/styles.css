@@ -281,6 +281,18 @@
     color:#0275d8;
 }
 
-.disabled{
+.disabled:hover{
     cursor: not-allowed;
+}
+
+#admin_user_edit{
+    /* display: block; */
+}
+
+#admin_user_update_btn{
+    display: none;
+}
+
+#change_pass_btn{
+    display: none;
 }

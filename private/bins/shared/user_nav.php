@@ -52,7 +52,7 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
         <?php echo $name; ?>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Account Settings</a>
+        <a class="dropdown-item" href="user_account_settings">Account Settings</a>
         <!-- <a class="dropdown-item" href="#">Link 2</a> -->
         <a class="dropdown-item" href="logOut">Log Out</a>
       </div>

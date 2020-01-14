@@ -5,6 +5,10 @@ include("../bins/shared/connections.php");
 // include("../bins/shared/slides.php");
 include("../bins/shared/admin_nav.php");
 
+$query_info = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
+$my_info = mysqli_fetch_assoc($query_info);
+$account_type = $my_info["account_type"];
+$img = $my_info["img"];
 
     $username = "";
     $password = "";
@@ -13,6 +17,7 @@ include("../bins/shared/admin_nav.php");
 
 ?>
 
+<br>
 <center>
 <div class="register_form_container col">
     
@@ -20,55 +25,22 @@ include("../bins/shared/admin_nav.php");
     <table border="0" width="100%">
     <?php
 $err = $result = "";
-if(isset($_POST["submit"])){
+if(isset($_POST["user_update"])){
     
 
-    if(empty($_POST["userM"])){
+    if(empty($_POST["user_edit"])){
 
     }else {
-        $username = $_POST["userM"];
-        $sesUse = $username;
-    }
-
-    if(empty($_POST["regPassword"])){
-
-    }else {
-        $password = $_POST["regPassword"];
-    }
-
-    if(empty($_POST["confirmPassword"])){
-
-    }else {
-        $confirmPassword = $_POST["confirmPassword"];
+        $username = $_POST["user_edit"];
+        // $sesUse = $username;
     }
 
 
-    if($username && $confirmPassword){
+    if($username){
 
-        $checkCount = 0;
         
         if(strlen($username) <= 8){
-                $err = "User Name";
-                $result = "should have at least combinations of 9 alpha numeric symbols.";
-                include("private/bins/shared/warning.php");
-                include("private/bins/shared/warningColorUserName.php");
-            }else{
-                include("private/bins/shared/removeWarningColorUserName.php");
-                if(strlen($regPassword) <= 8){
-                    $err = "Password";
-                    $result = "should have at least combinations of 9 alpha numeric symbols.";
-                    include("private/bins/shared/warning.php");
-                    include("private/bins/shared/warningColorRegPassword.php");
-                }else{
-                    include("private/bins/shared/removeWarningColorRegPassword.php");
-                    if($confirmPassword != $regPassword){
-                        $err = "Confirm Password";
-                        $result = "should match to the password you typed.";
-                        include("private/bins/shared/warning.php");
-                        include("private/bins/shared/warningColorConfirmPassword.php");
-                    }else{
-
-                        if($checkCount >= 1){
+            echo "<script>alert('username should have atleast 9 characters');</script>";     
                            
                         }else{
 
@@ -79,18 +51,49 @@ if(isset($_POST["submit"])){
                         $o = substr(str_shuffle($permitted_chars), 0, 4);
                         $ab = md5(rand(1,5));
                         $t = rand(1,6);
+                        $_SESSION["useM"] = $username;
+                        mysqli_query($connections, "UPDATE usrs SET usrname='$username' WHERE usrname='$sesUse'");
                         
-                        
-                        echo"<script>window.location.href='private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+                        echo"<script>window.location.href='../../private/admin?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
  
                         }
                     }
                 }
-            }
-        }
 
 
+    if(isset($_POST["password_update"])){
+    
+
+    if(empty($_POST["confirmPassword"])){
+
+    }else {
+        $confirmPassword = $_POST["confirmPassword"];
+        // $sesUse = $username;
     }
+
+
+    if($confirmPassword){
+
+        
+        if(strlen($confirmPassword) <= 8){
+            echo "<script>alert('Confirm Password should have atleast 9 characters');</script>";     
+                           
+                        }else{
+
+                        $a = md5(rand(1,9));
+                        $b = md5(rand(1,9));
+                        $c = md5(rand(1,9));
+                        $permitted_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        $o = substr(str_shuffle($permitted_chars), 0, 4);
+                        $ab = md5(rand(1,5));
+                        $t = rand(1,6);
+                        mysqli_query($connections, "UPDATE usrs SET pssword='$confirmPassword' WHERE usrname='$sesUse'");
+                        
+                        echo"<script>window.location.href='../../private/admin?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+ 
+                        }
+                    }
+                }
 
 
 
@@ -111,16 +114,17 @@ if(isset($_POST["submit"])){
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="userSign">User Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $username; ?>" name="userM" id="userSign" autocomplete="off" placeholder="User Name" required></td>
-    <td colspan="4"><input style="float:right;" class="btn btn-primary" type="submit" name="submit" value="Update"></td>
+    <td colspan="3"><input class="form-control txt_input disabled" type="text" value="<?php echo $username; ?>" name="user_edit" id="user_name_settings" autocomplete="off" placeholder="User Name" required disabled></td>
+    <td colspan="4"><a href="#" class="btn btn-primary" id="admin_user_edit" onclick="user_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a><input class="btn btn-primary" id="admin_user_update_btn" type="submit" name="user_update" value="Update"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
+    <input type="hidden" id="db_pass" value="<?php echo $db_password; ?>">
     <td class="label"><b><label for="regPassword">Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $password; ?>" name="regPassword" id="regPassword" autocomplete="off" placeholder="Password" required></td>
-    <td colspan="4"><input style="float:right;" class="btn btn-info" type="submit" name="submit" value="Change"></td>
+    <td colspan="3"><input class="form-control txt_input disabled" type="password" value="<?php echo $password; ?>" name="regPassword" id="change_pass" autocomplete="off" placeholder="Password" required disabled></td>
+    <td colspan="4"><a href="#" class="btn btn-primary" id="admin_password_edit" onclick="password_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a><input class="btn btn-info" type="button" value="Change" onclick="change_password()" id="change_pass_btn"></td>
     </tr>
     </div>
 
@@ -128,7 +132,7 @@ if(isset($_POST["submit"])){
     <tr>
     <td class="label"><b><label for="confirmPassword">Confirm Password:</label></b></td>
     <td colspan="3"><input class="form-control txt_input disabled" type="password" value="<?php echo $confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="off" placeholder="Confirm Password" disabled required></td>
-    <td colspan="4"><input style="float:right;" class="btn btn-success disabled" type="submit" name="submit" value="Update" disabled></td>
+    <td colspan="4"><input class="btn btn-success disabled" type="submit" name="password_update" value="Update" id="confirmPasswordButton" disabled></td>
     </tr>
     </div>
 
@@ -139,3 +143,59 @@ if(isset($_POST["submit"])){
 </form>
 </div>
 </center>
+
+<script>
+
+function password_edit(){
+    var password_edit = document.getElementById("admin_password_edit");
+    var changePassButton = document.getElementById("change_pass_btn");
+    var pass = document.getElementById("change_pass");
+
+    changePassButton.style.display = "block";
+    password_edit.style.display = "none";
+    pass.disabled = false;
+    pass.style.cursor = "auto";
+}
+
+function change_password(){
+    // alert("hay");
+ var confirmPass = document.getElementById("confirmPassword");
+ var confirmPassButton = document.getElementById("confirmPasswordButton");
+ var changePassButton = document.getElementById("change_pass_btn");
+ var db_pass = document.getElementById("db_pass");
+ var pass = document.getElementById("change_pass");
+
+if(pass.value == db_pass.value){
+ confirmPass.disabled = false;
+ confirmPass.style.cursor = "auto";
+ confirmPassButton.disabled = false;
+ confirmPassButton.style.cursor = "pointer";
+ confirmPassButton.classList.remove("disabled");
+
+ pass.disabled = true;
+ changePassButton.disabled = true;
+ pass.style.cursor = "not-allowed";
+ changePassButton.style.cursor = "not-allowed";
+}else{
+    alert("Incorrect password!");
+}
+
+//  disable db_password here
+}
+
+function user_edit(){
+    var edit = document.getElementById("admin_user_edit");
+    var update_btn = document.getElementById("admin_user_update_btn");
+    var user_settings = document.getElementById("user_name_settings");
+
+    update_btn.style.display = "block";
+    edit.style.display = "none";
+    user_settings.disabled = false;
+    user_settings.classList.remove("disabled");
+
+}
+
+
+</script>
+
+
