@@ -296,3 +296,11 @@
 #change_pass_btn{
     display: none;
 }
+
+.collapse_block{
+    display: block;
+}
+
+#user_user_update_btn{
+    display: none;
+}
