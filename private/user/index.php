@@ -309,6 +309,7 @@ if(!empty($img_post)){
 
 
 </script>
+<script src="../../bootstrap-4.3.1/js/bootstrap.min.js"></script> <!-- Bootstrap4 for offline -->
 
 <?php
 

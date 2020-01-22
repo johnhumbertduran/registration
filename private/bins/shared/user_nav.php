@@ -44,7 +44,7 @@ $getName = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse
   
   <ul class="navbar-nav justify-content-end">
     <li class="nav-item userHover">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="../user">Home</a>
     </li>
 
     <li class="nav-item dropdown userHover">

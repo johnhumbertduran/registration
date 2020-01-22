@@ -301,6 +301,98 @@
     display: block;
 }
 
-#user_user_update_btn{
+#user_lastname_update_btn{
+    display: none;
+}
+
+#user_firstname_update_btn{
+    display: none;
+}
+
+#user_middlename_update_btn{
+    display: none;
+}
+
+#user_homeAddress_update_btn{
+    display: none;
+}
+
+#user_gender_update_btn{
+    display: none;
+}
+
+#user_civil_update_btn{
+    display: none;
+}
+
+#user_employmentAddress_update_btn{
+    display: none;
+}
+
+#user_currentWork_update_btn{
+    display: none;
+}
+
+#user_currentPosition_update_btn{
+    display: none;
+}
+
+#user_elementary_update_btn{
+    display: none;
+}
+
+#user_elementaryYearGraduated_update_btn{
+    display: none;
+}
+
+#user_highSchool_update_btn{
+    display: none;
+}
+
+#user_highSchoolYearGraduated_update_btn{
+    display: none;
+}
+
+#user_college_update_btn{
+    display: none;
+}
+
+#user_collegeYearGraduated_update_btn{
+    display: none;
+}
+
+#user_collegeDegree_update_btn{
+    display: none;
+}
+
+#user_graduate_update_btn{
+    display: none;
+}
+
+#user_graduateYearGraduated_update_btn{
+    display: none;
+}
+
+#user_graduateDegree_update_btn{
+    display: none;
+}
+
+#user_officeTelephoneNo_update_btn{
+    display: none;
+}
+
+#user_cellphoneNo_update_btn{
+    display: none;
+}
+
+#user_alumniChapterMembership_update_btn{
+    display: none;
+}
+
+#user_email_update_btn{
+    display: none;
+}
+
+#user_username_update_btn{
     display: none;
 }
