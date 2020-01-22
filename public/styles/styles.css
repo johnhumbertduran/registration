@@ -396,3 +396,7 @@
 #user_username_update_btn{
     display: none;
 }
+
+#user_regPassword_update_btn{
+    display: none;
+}

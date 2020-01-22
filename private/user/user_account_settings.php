@@ -30,11 +30,11 @@ $alumniChapterMembership = "";
 $email = "";
 $username = "";
 $regPassword = "";
-$confirmPassword = "";
+$newPassword = "";
 
 ?>
 
-
+<br>
 
 <center>
 <div class="register_form_container col">
@@ -575,325 +575,29 @@ if(isset($_POST["username_update"])){
 
 }
 
-// if(isset($_POST["submits"])){
-    
+if(isset($_POST["newPassword_update"])){
 
+    if(empty($_POST["newPassword"])){
 
-//     if(empty($_POST["firstname"])){
+    }else {
+        $newPassword = $_POST["newPassword"];
+    }
 
-//     }else {
-//         $firstName = $_POST["firstname"];
-//     }
+    if($newPassword){
+        $a = md5(rand(1,9));
+        $b = md5(rand(1,9));
+        $c = md5(rand(1,9));
+        $permitted_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $o = substr(str_shuffle($permitted_chars), 0, 4);
+        $ab = md5(rand(1,5));
+        $t = rand(1,6);
+        // $_SESSION["useM"] = $newPassword;
+        mysqli_query($connections, "UPDATE usrs SET pssword='$newPassword' WHERE usrname='$sesUse'");
+        
+        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+    }
 
-//     if(empty($_POST["middlename"])){
-
-//     }else {
-//         $middleName = $_POST["middlename"];
-//     }
-
-//     if(empty($_POST["homeAddress"])){
-
-//     }else {
-//         $homeAddress = $_POST["homeAddress"];
-//     }
-
-//     if(empty($_POST["gender"])){
-
-//     }else {
-//         $gender = $_POST["gender"];
-//     }
-
-//     if(empty($_POST["civilStatus"])){
-
-//     }else {
-//         $civilStatus = $_POST["civilStatus"];
-//     }
-
-//     if(empty($_POST["employmentAddress"])){
-//         $employmentAddress = "none";
-//     }else {
-//         $employmentAddress = $_POST["employmentAddress"];
-//     }
-
-//     if(empty($_POST["currentWork"])){
-//         $currentWork = "none";
-//     }else {
-//         $currentWork = $_POST["currentWork"];
-//     }
-
-//     if(empty($_POST["currentPosition"])){
-//         $currentPosition = "none";
-//     }else {
-//         $currentPosition = $_POST["currentPosition"];
-//     }
-
-//     if(empty($_POST["elementary"])){
-//         // $elementary = "none";
-//     }else {
-//         $elementary = $_POST["elementary"];
-//     }
-
-//     if(empty($_POST["elementaryYearGraduated"])){
-//         // $elementaryYearGraduated = "none";
-//     }else {
-//         $elementaryYearGraduated = $_POST["elementaryYearGraduated"];
-//     }
-
-//     if(empty($_POST["highSchool"])){
-//         // $highSchool = "none";
-//     }else {
-//         $highSchool = $_POST["highSchool"];
-//     }
-
-//     if(empty($_POST["highSchoolYearGraduated"])){
-//         // $highSchoolYearGraduated = "none";
-//     }else {
-//         $highSchoolYearGraduated = $_POST["highSchoolYearGraduated"];
-//     }
-
-//     if(empty($_POST["college"])){
-//         $college = "none";
-//     }else {
-//         $college = $_POST["college"];
-//     }
-
-//     if(empty($_POST["collegeYearGraduated"])){
-//         $collegeYearGraduated = "none";
-//     }else {
-//         $collegeYearGraduated = $_POST["collegeYearGraduated"];
-//     }
-
-//     if(empty($_POST["collegeDegree"])){
-//         $collegeDegree = "none";
-//     }else {
-//         $collegeDegree = $_POST["collegeDegree"];
-//     }
-
-//     if(empty($_POST["graduate"])){
-//         $graduate = "none";
-//     }else {
-//         $graduate = $_POST["graduate"];
-//     }
-
-//     if(empty($_POST["graduateYearGraduated"])){
-//         $graduateYearGraduated = "none";
-//     }else {
-//         $graduateYearGraduated = $_POST["graduateYearGraduated"];
-//     }
-
-//     if(empty($_POST["graduateDegree"])){
-//         $graduateDegree = "none";
-//     }else {
-//         $graduateDegree = $_POST["graduateDegree"];
-//     }
-
-//     if(empty($_POST["telNo"])){
-
-//     }else {
-//         $officeTelephoneNo = $_POST["telNo"];
-//     }
-
-//     if(empty($_POST["celNo"])){
-
-//     }else {
-//         $cellphoneNo = $_POST["celNo"];
-//     }
-
-//     if(empty($_POST["alumniMembership"])){
-//         $alumniChapterMembership = "none";
-//     }else {
-//         $alumniChapterMembership = $_POST["alumniMembership"];
-//     }
-
-//     if(empty($_POST["emailAddress"])){
-
-//     }else {
-//         $email = $_POST["emailAddress"];
-//     }
-
-//     if(empty($_POST["userM"])){
-
-//     }else {
-//         $username = $_POST["userM"];
-//         $sesUse = $username;
-//     }
-
-//     if(empty($_POST["regPassword"])){
-
-//     }else {
-//         $regPassword = $_POST["regPassword"];
-//     }
-
-//     if(empty($_POST["confirmPassword"])){
-
-//     }else {
-//         $confirmPassword = $_POST["confirmPassword"];
-//     }
-
-
-//     if($lastName && $firstName && $middleName && $homeAddress && $gender && $civilStatus && $elementary && $elementaryYearGraduated && $highSchool && $highSchoolYearGraduated && $cellphoneNo && $email && $username && $regPassword && $confirmPassword){
-
-//         $checkCount = 0;
-
-//         if(!preg_match("/^[a-zA-Z. ]*$/", $lastName)){ 
-//             $err = "Last Name";
-//             $result = "should not have numbers or symbols.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorLastName.php");
-//             $checkCount += 1;
-            
-//         }else{
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorLastName.php");
-//         }
-
-//         if(!preg_match("/^[a-zA-Z. ]*$/", $firstName)){ 
-//             $err = "First Name";
-//             $result = "should not have numbers or symbols.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorFirstName.php");
-//             $checkCount += 1;
-            
-//         }else{
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorFirstName.php");
-//          }
-
-//         if(!preg_match("/^[a-zA-Z ]*$/", $middleName)){ 
-//             $err = "Middle Name";
-//             $result = "should not have numbers or symbols.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorMiddleName.php");
-//             $checkCount += 1;
-            
-//         }else{
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorMiddleName.php");
-//          }
-
-//          if(!preg_match("/^[0-9]*$/", $officeTelephoneNo)){ 
-//             $err = "Office Telephone Number";
-//             $result = "should contain numbers only.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorOfficeTelNo.php");
-//             $checkCount += 1;
-            
-//         }else{
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorOfficeTelNo.php");
-//          }
-
-//          if(!preg_match("/^[0-9]*$/", $cellphoneNo)){ 
-//             $err = "Cell Phone Number";
-//             $result = "should contain numbers only.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorCellNo.php");
-//             $checkCount += 1;
-            
-//         }else{
-            
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorCellNo.php");
-//          }
-
-//          if(strlen($cellphoneNo) <= 10){
-//             $err = "Cell Phone Number";
-//             $result = "should not be less than 11 digits.";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorCellNo.php");
-//             $checkCount += 1;
-
-//         }else{
-
-//             if($checkCount >= 1){
-//                 $checkCount - 1;
-//             }
-//             include("private/bins/shared/removeWarningColorCellNo.php");
-
-//         }
-
-//          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-//             $err = "Email Address";
-//             $result = "should contain proper format with '@' symbol and '.com'";
-//             include("private/bins/shared/warning.php");
-//             include("private/bins/shared/warningColorEmail.php");
-//          }else{
-//             include("private/bins/shared/removeWarningColorEmail.php");
-//             if(strlen($username) <= 8){
-//                 $err = "User Name";
-//                 $result = "should have at least combinations of 9 alpha numeric symbols.";
-//                 include("private/bins/shared/warning.php");
-//                 include("private/bins/shared/warningColorUserName.php");
-//             }else{
-//                 include("private/bins/shared/removeWarningColorUserName.php");
-//                 if(strlen($regPassword) <= 8){
-//                     $err = "Password";
-//                     $result = "should have at least combinations of 9 alpha numeric symbols.";
-//                     include("private/bins/shared/warning.php");
-//                     include("private/bins/shared/warningColorRegPassword.php");
-//                 }else{
-//                     include("private/bins/shared/removeWarningColorRegPassword.php");
-//                     if($confirmPassword != $regPassword){
-//                         $err = "Confirm Password";
-//                         $result = "should match to the password you typed.";
-//                         include("private/bins/shared/warning.php");
-//                         include("private/bins/shared/warningColorConfirmPassword.php");
-//                     }else{
-
-//                         if($checkCount >= 1){
-                           
-//                         }else{
-
-//                         $_SESSION["useM"] = $sesUse;
-                        
-
-//                         $a = md5(rand(1,9));
-//                         $b = md5(rand(1,9));
-//                         $c = md5(rand(1,9));
-//                         $permitted_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//                         $o = substr(str_shuffle($permitted_chars), 0, 4);
-//                         $ab = md5(rand(1,5));
-//                         $t = rand(1,6);
-                        
-                        
-//                         echo"<script>window.location.href='private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
-//                         // header('Location: private/user');
-
-
-//                         // mysqli_query($connections, "INSERT INTO usrs (lastName,firstName,middleName,
-//                         // homeAddress,gender,civilStatus,employmentAddress,currentWork,
-//                         // currentPosition,elementary,elementaryYearGraduated,highSchool,
-//                         // highSchoolYearGraduated,college,collegeYearGraduated,collegeDegree,
-//                         // graduate,graduateYearGraduated,graduateDegree,officeTelephoneNo,
-//                         // cellphoneNo,alumniChapterMembership,email,usrname,pssword,account_type)
-//                         // VALUES ('$lastName','$firstName','$middleName',
-//                         // '$homeAddress','$gender','$civilStatus',
-//                         // '$employmentAddress','$currentWork','$currentPosition',
-//                         // '$elementary','$elementaryYearGraduated','$highSchool',
-//                         // '$highSchoolYearGraduated','$college','$collegeYearGraduated',
-//                         // '$collegeDegree','$graduate','$graduateYearGraduated',
-//                         // '$graduateDegree','$officeTelephoneNo','$cellphoneNo',
-//                         // '$alumniChapterMembership','$email','$username',
-//                         // '$confirmPassword','2')");
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-
-
-//     }
-// }
+}
 
 $edit_user_qry = mysqli_query($connections, "SELECT * FROM usrs WHERE usrname='$sesUse'");
 $row_user_edits = mysqli_fetch_assoc($edit_user_qry);
@@ -925,7 +629,7 @@ $username = $row_user_edits["usrname"];
 $db_password = $row_user_edits["pssword"];
 
 ?>
-    <tr><th colspan="4"><center> <h1>Registration Form</h1> </center></th></tr>
+    <tr><th colspan="4"><center> <h1>User Settings</h1> </center></th></tr>
 
     <tr><td colspan="4"><hr></td></tr>
 
@@ -1236,16 +940,18 @@ $db_password = $row_user_edits["pssword"];
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="regPassword">Password:</label></b></td>
+    <input type="hidden" id="db_pass" value="<?php echo $db_password; ?>">
     <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $regPassword; ?>" name="regPassword" id="regPassword" autocomplete="off" placeholder="Password" required disabled></td>
-    <td colspan="4"><a href="#" class="btn btn-primary" id="user_regPassword_edit" onclick="user_regPassword_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a></td>
+    <!-- <td colspan="4"><a href="#" class="btn btn-primary" id="user_regPassword_edit" onclick="user_regPassword_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a></td> -->
+    <td colspan="4"><a href="#" class="btn btn-primary" id="user_regPassword_edit" onclick="user_regPassword_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a><input class="btn btn-primary" id="user_regPassword_update_btn" type="submit" onclick="check_password()" value="Change"></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
-    <td class="label"><b><label for="confirmPassword">Confirm Password:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $confirmPassword; ?>" name="confirmPassword" id="confirmPassword" autocomplete="off" placeholder="Confirm Password" required disabled></td>
-    <td colspan="4"><input class="btn btn-primary" id="user_confirmPassword_update_btn" type="submit" name="confirmPassword_update" value="Update"></td>
+    <td class="label"><b><label for="newPassword">New Password:</label></b></td>
+    <td colspan="3"><input class="form-control txt_input" type="password" value="<?php echo $newPassword; ?>" name="newPassword" id="newPassword" autocomplete="off" placeholder="New Password" required disabled></td>
+    <td colspan="4"><input class="btn btn-primary" id="user_newPassword_update_btn" type="submit" name="newPassword_update" value="Update" disabled></td>
     </tr>
     </div>
     </table>
@@ -1581,6 +1287,41 @@ function user_username_edit(){
     user_username_settings.classList.remove("disabled");
 
 }
+
+function user_regPassword_edit(){
+    var edit_regPassword = document.getElementById("user_regPassword_edit");
+    var update_regPassword_btn = document.getElementById("user_regPassword_update_btn");
+    var user_regPassword_settings = document.getElementById("regPassword");
+
+    update_regPassword_btn.style.display = "block";
+    edit_regPassword.style.display = "none";
+    user_regPassword_settings.disabled = false;
+    user_regPassword_settings.classList.remove("disabled");
+
+}
+
+function check_password(){
+    var db_pass = document.getElementById("db_pass");
+    var compare_pass = document.getElementById("regPassword");
+    // var pass_input = document.getElementById("regPassword");
+    var oldpass_btn = document.getElementById("user_regPassword_update_btn");
+    var newpass_input = document.getElementById("newPassword");
+    var newpass_btn = document.getElementById("user_newPassword_update_btn");
+
+
+if(compare_pass.value == db_pass.value){
+
+    compare_pass.disabled = true;
+    oldpass_btn.disabled = true;
+    newpass_input.disabled = false;
+    newpass_btn.disabled = false;
+
+}else{
+    alert("Invalid details!");
+}
+
+}
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
