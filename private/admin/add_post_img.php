@@ -154,7 +154,7 @@ if($img == ""){
     <img src="<?php echo $img; ?>" alt="" class="container-fluid" style="width:50%">
     <br>
     <br>
-    <a href='?' class="btn btn-danger add_img" style=" display:inline;">Cancel</a>
+    <a href='?' class="btn btn-danger add_img" style=" display:inline;">Done</a>
     <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
 <br>
 <br>

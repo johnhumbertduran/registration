@@ -104,6 +104,6 @@ include("view_profile.php");
 
 <?php
 
-    // include("private/bins/shared/footer.php");
+    include("private/bins/shared/footer.php");
 
 ?>

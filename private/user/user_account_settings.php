@@ -963,9 +963,9 @@ $db_password = $row_user_edits["pssword"];
 
     <tr><td colspan="4"><hr></td></tr>
     
-    <tr>
+    <!-- <tr>
         <td colspan="4"><input style="float:right;" class="btn btn-success" type="submit" name="submit" value="Submit"></td>
-    </tr>
+    </tr> -->
 
 <!-- </table> -->
 
