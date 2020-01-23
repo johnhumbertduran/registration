@@ -100,36 +100,10 @@ include("view_profile.php");
 ?>
 
 
-<!-- 
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
-<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
--->
-
-
 
 
 <?php
 
-    include("private/bins/shared/footer.php");
+    // include("private/bins/shared/footer.php");
 
 ?>

@@ -285,9 +285,11 @@
     cursor: not-allowed;
 }
 
+/* 
 #admin_user_edit{
-    /* display: block; */
-}
+    display: block;
+} */
+
 
 #admin_user_update_btn{
     display: none;
