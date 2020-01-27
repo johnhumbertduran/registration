@@ -14,8 +14,9 @@ if(isset($_POST["post_status_btn"])){
     }
 
     if($post){
-        mysqli_query($connections, "INSERT INTO admin_post (post,date,time) VALUES ('$post','$date_now','$time_now') ");
-        echo "<script> alert('Done'); window.location.href='?'; </script>";
+        $new_post = str_replace("'", "\'", $post);
+        mysqli_query($connections, "INSERT INTO admin_post (post,date,time) VALUES ('$new_post','$date_now','$time_now') ");
+        echo "<script> /* alert('Done'); */ window.location.href='?'; </script>";
     }
 }
 
