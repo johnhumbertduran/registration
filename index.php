@@ -81,7 +81,7 @@
     <!-- </form> -->
 </div>
 
-
+<!-- <h1><font color="red">Design Post Details</font></h1> -->
 
 <?php
 

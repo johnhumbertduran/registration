@@ -145,8 +145,14 @@ if(empty($_GET["notify"])){
 
 <?php
 if($img == ""){
-?>
-<a href='#' data-toggle='modal' data-target='#upload_photo' class="btn btn-success add_img">Upload Image </a>
+?><div class="" width="50%">
+<br>
+<br>
+<a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Upload Image </a>
+<br>
+<br>
+</div>
 <?php
 }else{
 ?>
@@ -154,7 +160,7 @@ if($img == ""){
     <img src="<?php echo $img; ?>" alt="" class="container-fluid" style="width:50%">
     <br>
     <br>
-    <a href='?' class="btn btn-danger add_img" style=" display:inline;">Done</a>
+    <a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
     <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
 <br>
 <br>

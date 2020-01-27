@@ -143,7 +143,7 @@ if(empty($_GET["notify"])){
 
 
 
-    <div class="container left_content">
+    <div class="container left_content col-md col-lg-4">
         <div>
         <?php
         
@@ -248,9 +248,11 @@ $_time = $my_post_info["time"];
 <br>
 <center>
 
-<div class="container-fluid mr-5" style="width:70%;">
+<div class="container-fluid col-md col-lg-8 float-right" style="width:100%;">
 
 <div class="content">
+
+    <span style="font-size:.8em;">
     <div class="d-flex ml-auto date_time pl-3 mt-1">
         <p><?php echo $_date; ?></p>
     </div>
@@ -258,15 +260,17 @@ $_time = $my_post_info["time"];
     <div class="d-flex ml-auto pl-3">
         <p><?php echo $_time; ?></p>
     </div>
+    </span>
     
-    <p><?php echo $post; ?></p>
+    <p class="mx-3" style="text-align:left;"><b><?php echo nl2br($post); ?></b></p>
 
 <?php
 if(!empty($img_post)){
 ?>
 <div class="">
-    <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:50%">
+    <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:100%">
 </div>
+<br>
 <?php
 }
 ?>
@@ -274,6 +278,7 @@ if(!empty($img_post)){
 
 </div>
 
+<br>
 </div>
 
 <?php
@@ -311,6 +316,7 @@ if(!empty($img_post)){
 </script>
 <script src="../../bootstrap-4.3.1/js/bootstrap.min.js"></script> <!-- Bootstrap4 for offline -->
 
+<div class="clearfix"></div>
 <?php
 
     include("../bins/shared/private_footer.php");

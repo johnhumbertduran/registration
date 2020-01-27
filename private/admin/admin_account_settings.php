@@ -199,3 +199,8 @@ function user_edit(){
 </script>
 
 
+<?php
+
+    include("../bins/shared/private_footer.php");
+
+?>

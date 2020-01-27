@@ -54,7 +54,7 @@ if(isset($_POST["post_status_btn"])){
 
 <?php
 
-$post_info = mysqli_query($connections, "SELECT * FROM admin_post ORDER BY date DESC, time DESC ");
+$post_info = mysqli_query($connections, "SELECT * FROM admin_post ORDER BY id DESC ");
 
 
 while($my_post_info = mysqli_fetch_assoc($post_info)){
@@ -78,21 +78,22 @@ $_time = $my_post_info["time"];
         <p><?php echo $_time; ?></p>
     </div>
     
-    <p><?php echo $post; ?></p>
+    <p class="mx-3" style="text-align:left;"><?php echo nl2br($post); ?></p>
 
 <?php
 if($img == ""){
-?>
-
+    ?>
+<br>
 <a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Add image</a>
 <?php
 }else{
-?>
+    ?>
 <?php
 ?>
 <div class="">
-    <img src="<?php echo $img; ?>" alt="" class="post_img" style="width:50%">
+    <img src="<?php echo $img; ?>" alt="" class="post_img" style="width:100%">
     <!-- <br> -->
+<p></p>
     <a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Change image</a>
 </div>
 <?php
