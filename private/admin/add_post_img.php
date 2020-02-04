@@ -149,6 +149,7 @@ if($img == ""){
 <br>
 <br>
 <a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
 <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Upload Image </a>
 <br>
 <br>
@@ -161,6 +162,7 @@ if($img == ""){
     <br>
     <br>
     <a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
+    <a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
     <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
 <br>
 <br>

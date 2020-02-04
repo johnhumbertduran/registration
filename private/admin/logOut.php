@@ -10,8 +10,8 @@
     
 	unset($_SESSION['useM']);
 	
-	session_unset();
-	session_destroy();
+	session_unset($_SESSION['useM']);
+	session_destroy($_SESSION['useM']);
 	
 	echo "Logging out... Please wait...";
     // echo "<script>window.location.href='index?logout=$logout&v_1=$email_md5';</script>";

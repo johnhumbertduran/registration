@@ -265,7 +265,11 @@ $_time = $my_post_info["time"];
     <p class="mx-3" style="text-align:left;"><b><?php echo nl2br($post); ?></b></p>
 
 <?php
-if(!empty($img_post)){
+if(empty($img_post)){
+?>
+
+<?php
+}else{
 ?>
 <div class="">
     <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:100%">
@@ -274,8 +278,6 @@ if(!empty($img_post)){
 <?php
 }
 ?>
-
-
 </div>
 
 <br>

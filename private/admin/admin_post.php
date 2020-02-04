@@ -85,7 +85,7 @@ $_time = $my_post_info["time"];
 if($img == ""){
     ?>
 <br>
-<a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Add image</a>
+<a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Edit Post</a>
 <?php
 }else{
     ?>
@@ -95,7 +95,7 @@ if($img == ""){
     <img src="<?php echo $img; ?>" alt="" class="post_img" style="width:100%">
     <!-- <br> -->
 <p></p>
-    <a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Change image</a>
+    <a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Edit Post</a>
 </div>
 <?php
 }
