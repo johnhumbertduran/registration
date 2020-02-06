@@ -127,6 +127,43 @@ if(empty($_GET["notify"])){
 
 ?>
 
+
+
+<?php
+
+
+// Edit post here
+
+if(isset($_POST['edit_post_status_btn'])){
+    
+    
+    if(empty($_POST["edit_post_status"])){
+        echo "Post empty";
+    }else{
+        $post = $_POST["edit_post_status"];
+    }
+
+    if($post){
+        $new_post = str_replace("'", "\'", $post);
+        mysqli_query($connections, "UPDATE admin_post SET post='$new_post' WHERE id='$id'");
+        echo "<script> /* alert('Done'); */ window.location.href='?'; </script>";
+    }
+
+}
+
+
+// Delete post here
+
+if(isset($_POST['delete_post_status_btn'])){
+
+        mysqli_query($connections, "DELETE FROM admin_post WHERE id='$id'");
+        echo "<script> /* alert('Done'); */ window.location.href='?'; </script>";
+
+}
+
+
+?>
+
 <br>
 <br>
 <center>
@@ -148,9 +185,10 @@ if($img == ""){
 ?><div class="" width="50%">
 <br>
 <br>
-<a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
+<a href='?' class="btn btn-warning add_img" style="display:inline;">Done</a>
 <a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
-<a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Upload Image </a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Upload Image</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#delete_post' class="btn btn-danger add_img">Delete Post</a>
 <br>
 <br>
 </div>
@@ -161,9 +199,10 @@ if($img == ""){
     <img src="<?php echo $img; ?>" alt="" class="container-fluid" style="width:50%">
     <br>
     <br>
-    <a href='?' class="btn btn-danger add_img" style="display:inline;">Done</a>
+    <a href='?' class="btn btn-warning add_img" style="display:inline;">Done</a>
     <a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
     <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
+    <a href='#' data-toggle='modal' style=" display:inline;" data-target='#delete_post' class="btn btn-danger add_img">Delete Post</a>
 <br>
 <br>
 </div>
@@ -175,7 +214,7 @@ if($img == ""){
 
 </div>
 
-<!-- The Modal -->
+<!-- The Upoad Photo Modal -->
 <div class="modal fade" id="upload_photo">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -213,6 +252,78 @@ if($img == ""){
                         </center>
                     </form>
                 <!-- <span class="error"><?php echo $uploadErr; ?></span> -->
+                </center>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+
+
+
+<!-- _______________________________The Edit Post Modal_______________________________ -->
+<div class="modal fade" id="edit_post">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4>Edit Post</h4>
+              <button type="button" class="close" id="dp_close" onclick="closing()" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+            <center>
+
+            <form method="POST">
+            <textarea class="form-control" name="edit_post_status" id="posting" cols="10" rows="10"><?php echo $post; ?></textarea>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                        <center>
+                        <input type="submit" name="edit_post_status_btn" class="btn btn-primary floating_right" value="Post">
+                        </center>
+                    </form>
+                </center>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- ################_____The Delete Post Modal_____################ -->
+<div class="modal fade" id="delete_post">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4>Delete Post</h4>
+              <button type="button" class="close" id="dp_close" onclick="closing()" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+            <center>
+
+            
+            <h5>Are you sure you want to <font color="red"><u><b>DELETE</b></u></font> this post?</h5>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                    <form method="POST">
+                        <center>
+                        <input type="submit" name="delete_post_status_btn" class="btn btn-primary floating_right" value="Delete">
+                        </center>
+                    </form>
                 </center>
             </div>
             

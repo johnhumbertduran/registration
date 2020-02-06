@@ -24,7 +24,10 @@ while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
     $address = ucfirst($row_usrs["homeAddress"]);
     $work = ucfirst($row_usrs["currentWork"]);
     $workPosition = ucfirst($row_usrs["currentPosition"]);
+    $workAddress = ucfirst($row_usrs["employmentAddress"]);
     $email = $row_usrs["email"];
+    $collegeDegree = $row_usrs["collegeDegree"];
+    $year = $row_usrs["collegeYearGraduated"];
 
     $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;    
 
@@ -48,10 +51,19 @@ while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
       <?php } ?>
     </center>
 
-  <div class='card-body'>
-    <h6 class='card-title'><?php echo $fullName; ?></h6>
-    <p class='card-text'><?php echo $address; ?></p>
-    <p class='card-text'><?php echo $email; ?></p>
+  <div class='card-body text-left'>
+    <small class='card-title'>
+    <?php echo $fullName; ?><br>
+    <?php echo $collegeDegree; ?> Class of <?php echo $year; ?><br>
+    <?php echo $address; ?><br>
+    <?php echo $email; ?><br>
+    Works at <?php echo $work; ?><br>
+    at <?php echo $workAddress; ?><br>
+    as <?php echo $workPosition; ?><br>
+    </small>
+    <p class='card-text'></p>
+    <p class='card-text'></p>
+    <p class='card-text'></p>
   </div>
 
   <div class="card-footer">

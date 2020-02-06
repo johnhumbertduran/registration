@@ -19,16 +19,24 @@ document.title += " / Contact";
 
 <br>
 <center>
-<div class="lorem">
-<p>Lorem ipsum dolor sit amet, cum viris aliquam an, cu iudico atomorum qualisque per. Impetus facilisis ei eam. At mnesarchum disputationi ius, euismod equidem qualisque vis ne, sonet singulis vis cu. At eam soleat iudicabit, ad eam intellegat abhorreant incorrupte.</p>
+<div class="lorem text-left mx-5">
 
-<p>Cu vel noluisse voluptatibus, ut animal utamur dissentiunt per. Cu petentium definitiones nec, partem everti adipisci an nam. Discere adipisci eleifend cu eos. His te veri quaeque, vis id wisi commodo, ei dicant honestatis nec. Sint postea vim in, et nobis consul vis.</p>
+<h2 class="text-primary">Address</h2>
+<p class="text-secondary">Archbishop Gabriel M. Reyes Street, 5600 Kalibo, Aklan,
+Philippines.</p>
+<hr>
 
-<p>Putant comprehensam mel ad, sint adipisci eu cum, et nam sint nemore offendit. An his saperet denique omittam. Senserit voluptatum no vix, nisl dicunt abhorreant vis ne. Vix facer dolorum argumentum no. Tamquam probatus per at, et laudem nemore persecuti est. Eu vim enim paulo tempor.</p>
+<h2 class="text-primary">Contact Number</h2>
+<p class="text-secondary">(036) 268-4152 <br>
+268-8576 <br>
+268-9347</p>
+<hr>
 
-<p>Cum vivendo disputando no, qui zril copiosae te. In vel omnes congue fastidii. Eum te facilis corpora, etiam dolorum inciderint te vix. Alii nominavi persequeris vis ex.
+<h2 class="text-primary">Email Address</h2>
+<p class="text-secondary">info@acc.edu.ph <br>
+registrar@acc.edu.ph</p>
+<hr>
 
-<p>Vocent accumsan no vis, ei nec deleniti apeirian. In magna argumentum sadipscing has. Nec ad alii ferri affert, duis ullum audire in est. Sit an natum consequat intellegat, constituto adversarium ex eam, ne ferri voluptaria nec.</p>
 </div>
 </center>
 

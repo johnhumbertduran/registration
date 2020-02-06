@@ -28,11 +28,11 @@ if(empty($_GET["search"])){
 			
 			if($i == 1){
 			
-				$q .= "firstName LIKE '%$each%' OR lastName LIKE '%$each%' OR middleName LIKE '%$each%' OR homeAddress LIKE '%$each%' OR email LIKE '%$each%' ";
+				$q .= "firstName LIKE '%$each%' OR lastName LIKE '%$each%' OR middleName LIKE '%$each%' OR homeAddress LIKE '%$each%' OR email LIKE '%$each%' OR collegeYearGraduated LIKE '%$each%' OR collegeDegree LIKE '%$each%' ";
 			
 			}else{
 			
-				$q .= "OR firstName LIKE '%$each%' OR lastName LIKE '%$each%' OR middleName LIKE '%$each%' OR homeAddress LIKE '%$each%' OR email LIKE '%$each%' ";
+				$q .= "OR firstName LIKE '%$each%' OR lastName LIKE '%$each%' OR middleName LIKE '%$each%' OR homeAddress LIKE '%$each%' OR email LIKE '%$each%' OR collegeYearGraduated LIKE '%$each%' OR collegeDegree LIKE '%$each%' ";
 			
 			}
 		
@@ -53,7 +53,10 @@ if(empty($_GET["search"])){
                         $address = ucfirst($row["homeAddress"]);
                         $work = ucfirst($row["currentWork"]);
                         $workPosition = ucfirst($row["currentPosition"]);
+                        $workAddress = ucfirst($row["employmentAddress"]);
                         $email = $row["email"];
+                        $collegeDegree = $row["collegeDegree"];
+                        $year = $row["collegeYearGraduated"];
                                         
                         $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;    
 ?>
@@ -76,10 +79,16 @@ if(empty($_GET["search"])){
       <?php } ?>
     </center>
 
-  <div class='card-body'>
-    <h6 class='card-title'><?php echo $fullName; ?></h6>
-    <p class='card-text'><?php echo $address; ?></p>
-    <p class='card-text'><?php echo $email; ?></p>
+  <div class='card-body text-left'>
+    <small class='card-title'>
+    <?php echo $fullName; ?><br>
+    <?php echo $collegeDegree; ?> Class of <?php echo $year; ?><br>
+    <?php echo $address; ?><br>
+    <?php echo $email; ?><br>
+    Works at <?php echo $work; ?><br>
+    at <?php echo $workAddress; ?><br>
+    as <?php echo $workPosition; ?><br>
+    </small>
   </div>
 
   <div class="card-footer">

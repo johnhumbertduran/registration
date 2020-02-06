@@ -11,13 +11,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="public/images/1.jpg" alt="Image 1">
+      <img src="public/images/banner1_pic.jpg" alt="Image 1">
     </div>
     <div class="carousel-item">
-      <img src="public/images/2.jpg" alt="Image 2">
+      <img src="public/images/banner2_pic.jpg" alt="Image 2">
     </div>
     <div class="carousel-item">
-      <img src="public/images/3.jpg" alt="Image 3">
+      <img src="public/images/banner3_pic.jpg" alt="Image 3">
     </div>
   </div>
   
