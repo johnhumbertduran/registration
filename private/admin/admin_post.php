@@ -31,7 +31,7 @@ if(isset($_POST["post_status_btn"])){
 <center>
 
 <div class="container clearfix">
-<label for="posting" class="_collapsing"  data-toggle="collapse" data-target="#postings"><h4>Post a status</h4></label>
+<label for="posting" class=" btn btn-primary"  data-toggle="collapse" data-target="#postings"><h4>Post a status</h4></label>
 <!-- <button data-toggle="collapse" data-target="#postings">Collapsible</button> -->
     <div id="postings" class="collapse hide">
 <form method="POST">
