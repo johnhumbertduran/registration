@@ -27,6 +27,7 @@ $img = $my_info["img"];
 <br>
 <br>
 
+<a href="TCPDF/User/blank.php" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</a>
 
 <?php
 
@@ -67,6 +68,11 @@ include("admin_view_profile.php");
 </div>
 </center> -->
 
+<script>
+function getpdf(){
+    window.location.href = "TCPDF/User/blank.php";
+}
+</script>
 <?php
 
     include("../bins/shared/private_footer.php");

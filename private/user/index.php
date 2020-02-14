@@ -17,6 +17,7 @@ $middleName = ucfirst($my_info["middleName"]);
 $lastName = ucfirst($my_info["lastName"]);
 $address = ucfirst($my_info["homeAddress"]);
 $work = ucfirst($my_info["currentWork"]);
+$workAddress = ucfirst($my_info["employmentAddress"]);
 $workPosition = ucfirst($my_info["currentPosition"]);
 $email = $my_info["email"];
 
@@ -68,7 +69,7 @@ $tmp_img = "tmp_icn/tmp_icon.png";
 </script>
 
 <br>
-
+<a href="TCPDF/User/blank.php">Get PDF</a>
 
 <?php
 
@@ -170,14 +171,15 @@ if(empty($_GET["notify"])){
             <br>
             <h5><center>Basic Info</center></h5>
             <hr>
-            <h6><center><?php echo $fullName; ?></center></h6>
-            <h6><center><?php echo $address; ?></center></h6>
+            <h6 class="small"><?php echo $fullName; ?></h6>
+            <h6 class="small"><?php echo $address; ?></h6>
             <?php if($work != "N/A" && "none"){?>
-            <h6><center><?php echo $workPosition . " at " . $work ; ?></center></h6>
+            <h6 class="small"><?php echo "Works as " . $work . " at " . $workAddress ; ?></h6>
+            <h6 class="small"><?php echo "Position:     " . $workPosition ?></h6>
             <?php }else{
                 
             } ?>
-            <h6><center><?php echo $email; ?></center></h6>
+            <h6 class="small"><?php echo $email; ?></h6>
             <br>
         </div>
 

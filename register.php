@@ -463,8 +463,8 @@ if(isset($_POST["submit"])){
 
     <div class="form-group">
     <tr>
-    <td class="label"><b><label for="employmentAddress">Employment Address:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->employmentAddress; ?>" name="employmentAddress" id="employmentAddress" autocomplete="off" placeholder="Employment Address"></td>
+    <td class="label"><b><label for="employmentAddress">Company Name:</label></b></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $user->employmentAddress; ?>" name="employmentAddress" id="employmentAddress" autocomplete="off" placeholder="Company Name"></td>
     </tr>
     </div>
 
