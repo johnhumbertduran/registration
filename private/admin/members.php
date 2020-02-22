@@ -15,6 +15,7 @@ $img = $my_info["img"];
 
 ?>
 
+<a href="TCPDF/User/blank.php">ge this</a>
 
 <div class="input-group mb-3" id="admin_input_scroll">
     <input type="text" name="search" class="form-control" id="myEmail" placeholder="Search.." autocomplete="off" onchange="setUrlRemove()">
@@ -27,7 +28,6 @@ $img = $my_info["img"];
 <br>
 <br>
 
-<a href="TCPDF/User/blank.php" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</a>
 
 <?php
 

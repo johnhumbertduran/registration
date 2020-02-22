@@ -4,7 +4,7 @@ define ('K_TCPDF_EXTERNAL_CONFIG', true);
 
 define ('K_PATH_IMAGES', dirname(__FILE__).'/../images/');
 
-define ('PDF_HEADER_LOGO', 'tcpdf_logo.jpg');
+define ('PDF_HEADER_LOGO', 'logo.png');
 
 define ('PDF_HEADER_LOGO_WIDTH', 20);
 
@@ -20,9 +20,9 @@ define ('PDF_CREATOR', 'TCPDF');
 
 define ('PDF_AUTHOR', 'TCPDF');
 
-define ('PDF_HEADER_TITLE', 'PHP TUTORIAL TAGALOG');
+define ('PDF_HEADER_TITLE', 'Aklan Catholic College');
 
-define ('PDF_HEADER_STRING', "Lesson 5\nPDF on Web\nPrepared by: Paul John Villarico");
+define ('PDF_HEADER_STRING', "Alumni\nOnline\nRegistration");
 
 define ('PDF_UNIT', 'mm');
 

@@ -69,7 +69,7 @@ $tmp_img = "tmp_icn/tmp_icon.png";
 </script>
 
 <br>
-<a href="TCPDF/User/blank.php">Get PDF</a>
+
 
 <?php
 

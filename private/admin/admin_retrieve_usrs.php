@@ -21,9 +21,9 @@
 <div class="container">
 
 <center>
+<form action="getpdf.php" method="post">
 <div class="card-deck">
 <?php
-
 
 $admin_usr_qry = mysqli_query($connections, "SELECT * FROM usrs WHERE account_type='2'");
 
@@ -74,6 +74,7 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
     <a href='?view=<?php echo $firstName; ?>' class='btn btn-primary'>See Profile</a>&nbsp;
     <a href='' class='btn btn-danger' data-toggle="modal" data-target="#myModal<?php echo $id; ?>" onchange="setUrlRemove()">Remove</a>
   </div>
+
 </div>
 
 <br>
@@ -119,5 +120,8 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
 
 ?>
 
+<!-- <a href="TCPDF/examples/example_065.php">Hello pdf</a> -->
+<button type="submit" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</button>
+  </form>
 </div>
 </center>
