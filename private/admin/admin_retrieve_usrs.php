@@ -121,7 +121,7 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
 ?>
 
 <!-- <a href="TCPDF/examples/example_065.php">Hello pdf</a> -->
-<button type="submit" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</button>
+<!-- <button type="submit" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</button> -->
   </form>
 </div>
 </center>

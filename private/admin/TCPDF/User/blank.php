@@ -6,10 +6,10 @@ include("../../../bins/shared/connections.php");
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('PHP TUTORIAL TAGALOG: LESSON 5');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+$pdf->SetAuthor('');
+$pdf->SetTitle('Aklan Catholic College Alimni Online Registration');
+$pdf->SetSubject('');
+$pdf->SetKeywords('Aklan Catholic College');
 
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
@@ -42,14 +42,14 @@ $pdf->AddPage('P');
 
 // $html .= '<thead><tr><b>Name</b></tr></thead>';
 $pdf->SetFont("Helvetica",'',7);
-$pdf->Cell(40,10,"Name",0,0,'C');
+$pdf->Cell(30,10,"Name",0,0,'C');
 $pdf->Cell(30,10,"Address",0,0,'C');
 // $pdf->Cell(20,10,"Gender",0,0,'C');
-$pdf->Cell(20,10,"Work Posistion",0,0,'C');
-$pdf->Cell(40,10,"Employment Address",0,0,'C');
+$pdf->Cell(30,10,"Work Posistion",0,0,'C');
+$pdf->Cell(30,10,"Employment Address",0,0,'C');
 // $pdf->Cell(20,10,"College",0,0,'C');
 $pdf->Cell(30,10,"Cellphone Number",0,0,'C');
-$pdf->Cell(20,10,"Email",0,1,'C');
+$pdf->Cell(30,10,"Email",0,1,'C');
 
 $query = mysqli_query($connections, "SELECT * FROM usrs WHERE account_type='2'");
 while($row = mysqli_fetch_assoc($query)){
@@ -88,13 +88,13 @@ while($row = mysqli_fetch_assoc($query)){
 
 	$fullname = $firstName . $middleName[0] . "." . $lastName;
 
-	// echo $pdf->SetFont("Helvetica",'',8);
-	echo $pdf->Cell(40,10,$fullname,1,0,'C');
+	echo $pdf->SetFont("Helvetica",'',6);
+	echo $pdf->Cell(30,10,$fullname,1,0,'C');
 	echo $pdf->Cell(30,10,$address,1,0,'C');
-	echo $pdf->Cell(20,10,$workPosition,1,0,'C');
-	echo $pdf->Cell(40,10,$workAddress,1,0,'C');
+	echo $pdf->Cell(30,10,$workPosition,1,0,'C');
+	echo $pdf->Cell(30,10,$workAddress,1,0,'C');
 	echo $pdf->Cell(30,10,$cellphone,1,0,'C');
-	echo $pdf->Cell(20,10,$email,1,1,'C');
+	echo $pdf->Cell(30,10,$email,1,1,'C');
 	
 }
 
@@ -106,5 +106,5 @@ while($row = mysqli_fetch_assoc($query)){
 
 $pdf->lastPage();
 
-$pdf->Output('Plain.pdf', 'I');
+$pdf->Output('aklan_catholic_college_alumni.pdf', 'I');
 
