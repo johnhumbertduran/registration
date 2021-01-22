@@ -77,6 +77,16 @@ while($row_usrs = mysqli_fetch_assoc($usrs_qry)){
 
 <?php
 }
+
+$countR = mysqli_num_rows($usrs_qry);
+
+if($countR > 0 ){
+  // echo "Greater than zero";
+}else{
+  // echo "Less than zero";
+  echo "No Records Found";
+}
+
 ?>
 </div>
 </center>

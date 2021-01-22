@@ -68,9 +68,9 @@ $_time = $my_post_info["time"];
 
 <br>
 <center>
-<div class="container-fluid">
+<div class="container-fluid" style="width:40%;">
 
-<div class="content">
+<div class="content" style="border-radius: 10px; background:#ececec;">
     <div class="d-flex ml-auto date_time pl-3 mt-1">
         <p><?php echo $_date; ?></p>
     </div>
@@ -91,12 +91,12 @@ if($img == ""){
     ?>
 <?php
 ?>
-<div class="">
-    <img src="<?php echo $img; ?>" alt="" class="post_img" style="width:100%">
+<div class="" style="max-height:300px; text-align: center; overflow:hidden; border-top:1px solid #c4c4c4; border-bottom:1px solid #c4c4c4; background:#fff;">
+    <img src="<?php echo $img; ?>" alt="" class="post_img" style="width:100%; vertical-align: middle;">
     <!-- <br> -->
 <p></p>
-    <a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Edit Post</a>
 </div>
+<a href='?id=<?php echo $post_id; ?>' class="btn btn-success add_img">Edit Post</a>
 <?php
 }
 ?>

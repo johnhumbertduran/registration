@@ -3,9 +3,6 @@
 </style>
 <br>
 <br>
-<br>
-<br>
-<br>
 <script>
     var _URL = window.URL || window.webkitURL;
     var prev = document.getElementById("preview");
@@ -167,9 +164,9 @@ if(isset($_POST['delete_post_status_btn'])){
 <br>
 <br>
 <center>
-<div class="container-fluid">
+<div class="container-fluid" style="width:40%; /* background-color:#ea010a; */">
 
-<div class="content">
+<div class="content" style="border-radius: 10px; background:#ececec;">
     <div class="d-flex ml-auto date_time pl-3 mt-1">
         <p><?php echo $_date; ?></p>
     </div>
@@ -195,17 +192,15 @@ if($img == ""){
 <?php
 }else{
 ?>
-<div class="" width="50%">
+<div class="" width="50%" style="max-height:300px; text-align: center; overflow:hidden; border-top:1px solid #c4c4c4; border-bottom:1px solid #c4c4c4; background:#fff;">
     <img src="<?php echo $img; ?>" alt="" class="container-fluid" style="width:50%">
-    <br>
-    <br>
-    <a href='?' class="btn btn-warning add_img" style="display:inline;">Done</a>
-    <a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
-    <a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
-    <a href='#' data-toggle='modal' style=" display:inline;" data-target='#delete_post' class="btn btn-danger add_img">Delete Post</a>
-<br>
-<br>
 </div>
+<p></p>
+<a href='?' class="btn btn-warning add_img" style="display:inline;">Done</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#edit_post' class="btn btn-primary add_img">Edit Post</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#upload_photo' class="btn btn-success add_img">Update Image</a>
+<a href='#' data-toggle='modal' style=" display:inline;" data-target='#delete_post' class="btn btn-danger add_img">Delete Post</a>
+<p></p>
 <?php
 }
 ?>

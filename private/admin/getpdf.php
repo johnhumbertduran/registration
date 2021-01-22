@@ -40,6 +40,6 @@ $mpdf->WriteHTML($data);
 
 // $mpdf->lastpage();   
 
-$mpdf->Output('register.pdf', 'D');
+$mpdf->Output('register.pdf', 'I');
 
 ?>

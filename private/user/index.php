@@ -250,9 +250,9 @@ $_time = $my_post_info["time"];
 <br>
 <center>
 
-<div class="container-fluid col-md col-lg-8 float-right" style="width:100%;">
+<div class="container-fluid col-md col-lg-8" style="width:40%; /* background-color:#ea010a; */">
 
-<div class="content">
+<div class="content" style="border-radius: 10px; background:#ececec;">
 
     <span style="font-size:.8em;">
     <div class="d-flex ml-auto date_time pl-3 mt-1">
@@ -273,8 +273,8 @@ if(empty($img_post)){
 <?php
 }else{
 ?>
-<div class="">
-    <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:100%">
+<div class="" style="max-height:300px; text-align: center; overflow:hidden; border-top:1px solid #c4c4c4; border-bottom:1px solid #c4c4c4; background:#fff;">
+    <img src="<?php echo $img_post; ?>" alt="" class="post_img" style="width:100%; vertical-align: middle;">
 </div>
 <br>
 <?php

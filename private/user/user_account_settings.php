@@ -61,7 +61,8 @@ if(isset($_POST["lastname_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET lastName='$lastName' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -84,7 +85,8 @@ if(isset($_POST["firstname_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET firstName='$firstName' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -107,7 +109,8 @@ if(isset($_POST["middlename_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET middleName='$middleName' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -130,7 +133,8 @@ if(isset($_POST["homeaddress_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET homeAddress='$homeAddress' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -155,7 +159,8 @@ if(isset($_POST["gender_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET gender='$gender' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -178,7 +183,8 @@ if(isset($_POST["civil_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET civilStatus='$civilStatus' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='r?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -201,7 +207,8 @@ if(isset($_POST["employmentAddress_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET employmentAddress='$employmentAddress' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='r?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -224,7 +231,8 @@ if(isset($_POST["currentWork_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET currentWork='$currentWork' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -247,7 +255,8 @@ if(isset($_POST["currentPosition_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET currentPosition='$currentPosition' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -270,7 +279,8 @@ if(isset($_POST["elementary_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET elementary='$elementary' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -293,7 +303,8 @@ if(isset($_POST["elementaryYearGraduated_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET elementaryYearGraduated='$elementaryYearGraduated' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -316,7 +327,8 @@ if(isset($_POST["highSchool_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET highSchool='$highSchool' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -339,7 +351,8 @@ if(isset($_POST["highSchoolYearGraduated_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET highSchoolYearGraduated='$highSchoolYearGraduated' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -362,7 +375,8 @@ if(isset($_POST["college_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET college='$college' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -385,7 +399,8 @@ if(isset($_POST["collegeYearGraduated_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET collegeYearGraduated='$collegeYearGraduated' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -408,7 +423,8 @@ if(isset($_POST["collegeDegree_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET collegeDegree='$collegeDegree' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -431,7 +447,8 @@ if(isset($_POST["graduate_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET graduate='$graduate' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -454,7 +471,8 @@ if(isset($_POST["graduateYearGraduated_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET graduateYearGraduated='$graduateYearGraduated' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -477,7 +495,8 @@ if(isset($_POST["graduateDegree_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET graduateDegree='$graduateDegree' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        // echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -500,7 +519,7 @@ if(isset($_POST["officeTelephoneNo_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET officeTelephoneNo='$officeTelephoneNo' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -523,7 +542,7 @@ if(isset($_POST["cellphoneNo_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET cellphoneNo='$cellphoneNo' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -546,7 +565,7 @@ if(isset($_POST["email_update"])){
         $t = rand(1,6);
         mysqli_query($connections, "UPDATE usrs SET email='$email' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -570,7 +589,7 @@ if(isset($_POST["username_update"])){
         $_SESSION["useM"] = $username;
         mysqli_query($connections, "UPDATE usrs SET usrname='$username' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -594,7 +613,7 @@ if(isset($_POST["newPassword_update"])){
         // $_SESSION["useM"] = $newPassword;
         mysqli_query($connections, "UPDATE usrs SET pssword='$newPassword' WHERE usrname='$sesUse'");
         
-        echo"<script>window.location.href='../../private/user?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
+        echo"<script>window.location.href='?$a&&$b&&$o' + '_' + '$ab=$t';</script>";
     }
 
 }
@@ -651,7 +670,7 @@ $db_password = $row_user_edits["pssword"];
     <td colspan="4"><a href="#" class="btn btn-primary" id="user_lastname_edit" onclick="user_lastname_edit()">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a><input class="btn btn-primary" id="user_lastname_update_btn" type="submit" name="lastname_update" value="Update"></td>
     </tr>
     </div>
-    </form>
+    
 
     <div class="form-group">
     <tr>
@@ -957,6 +976,7 @@ $db_password = $row_user_edits["pssword"];
     </table>
         </div>
       </div>
+    </form>
     </div>
     <!-- collapsible end div tag -->
   </div>

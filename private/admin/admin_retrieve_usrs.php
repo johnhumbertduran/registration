@@ -21,7 +21,7 @@
 <div class="container">
 
 <center>
-<form action="getpdf.php" method="post">
+<form method="post">
 <div class="card-deck">
 <?php
 
@@ -43,11 +43,14 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
 
     $fullName = $firstName . " " . ucfirst($middleName[0]) . ". " . $lastName;    
 
+    
+
+
 
 ?>
 <div class="col-sm-3" width="100%">
 
-<div class='card card_hover' style='width:270px; height:500px;'>    
+<div class='card card_hover' style='width:230px; height:300px;'>    
     <center>
       <?php if($img == ""){?>
 
@@ -66,8 +69,8 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
 
   <div class='card-body'>
     <h6 class='card-title'><?php echo $fullName; ?></h6><input type="hidden" name="" value="<?php echo $id; ?>">
-    <p class='card-text'><?php echo $address; ?></p>
-    <p class='card-text' id='myEmail'><?php echo $email; ?></p>
+    <p class='card-text'><?php echo $address; ?><br><?php echo $email; ?></p>
+    <p class='card-text' id='myEmail'></p>
   </div>
 
   <div class="card-footer input-group justify-content-center">
@@ -97,7 +100,7 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
             <h3><font color="red">This action cannot be undone.</font></h3>
             <form method="post">
                 <input type="hidden" name="yes_remove" value="<?php echo $id; ?>">
-                <input type="hidden" name="final_id" value="<?php $my_id = $id; echo $my_id; ?>">
+                <input type="text" name="final_id" value="<?php $my_id = $id; echo $my_id; ?>">
         </div>
         
         <!-- Modal footer -->
@@ -115,10 +118,19 @@ while($row_usrs = mysqli_fetch_assoc($admin_usr_qry)){
 
 <?php
 }
+$countR = mysqli_num_rows($admin_usr_qry);
 
-
-
+if($countR > 0 ){
+  // echo "Greater than zero";
+}else{
+  // echo "Less than zero";
+  echo "No Records Found";
+}
 ?>
+
+
+
+
 
 <!-- <a href="TCPDF/examples/example_065.php">Hello pdf</a> -->
 <!-- <button type="submit" class="btn btn-warning fixed-bottom d-inline-block">Get PDF</button> -->
